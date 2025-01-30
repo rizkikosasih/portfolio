@@ -15,7 +15,7 @@ const Navbar = () => {
         <p className="blue-gradient_text">RK</p>
       </NavLink>
 
-      <nav className="flex text-lg gap-7 font-medium">
+      <nav className="flex text-lg gap-2 md:gap-7 font-medium">
         {listMenu.map((v, i) => {
           if (i > 0) {
             return (
