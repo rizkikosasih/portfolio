@@ -98,7 +98,7 @@ body:has(.card[data-color='green']:hover) {
       0 0 15px #0072ff;
     filter: brightness(1.2);
     transition: box-shadow 0.3s ease;
-    @apply rounded-full w-[90%] h-[90%] object-cover bg-gradient-to-r from-[#00c6ff] to-[#0072ff];
+    @apply rounded-full w-[80%] h-[80%] object-cover bg-gradient-to-r from-[#00c6ff] to-[#0072ff];
   }
 
   .profile-image:hover {
