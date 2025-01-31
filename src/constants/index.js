@@ -273,7 +273,7 @@ const educations = [
     theme: 'btn-back-red',
     name: 'SD',
     title: 'Sekolah Dasar',
-    periode: '2011-2014',
+    periode: '2003-2008',
     schoolName: 'SDN 09 Jakarta'
   },
   {
