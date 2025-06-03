@@ -49,7 +49,7 @@ const About = () => {
             <div className="block-container w-12 h-12">
               <div className={`btn-back rounded-xl ${education.theme}`} />
               <div
-                data-tooltip-id={education.name.trim().toLowerCase()}
+                data-tooltip-id="education-tooltip"
                 data-tooltip-html={`<p class='font-semibold'>${education.title}</p>`}
                 className="btn-front rounded-xl flex justify-center items-center">
                 <img
@@ -58,14 +58,6 @@ const About = () => {
                   loading="lazy"
                 />
               </div>
-
-              <Tooltip
-                id={education.name.trim().toLowerCase()}
-                style={{
-                  background: 'linear-gradient(to right, #00c6ff, #0072ff)',
-                  color: 'rgb(224, 231, 225)'
-                }}
-              />
             </div>
 
             <div className="mt-5 flex flex-col">
@@ -78,6 +70,14 @@ const About = () => {
             </div>
           </div>
         ))}
+
+        <Tooltip
+          id="education-tooltip"
+          style={{
+            background: 'linear-gradient(to right, #00c6ff, #0072ff)',
+            color: 'rgb(224, 231, 225)'
+          }}
+        />
       </div>
 
       <hr className="border-slate-200" />
