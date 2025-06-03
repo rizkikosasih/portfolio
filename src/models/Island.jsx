@@ -54,7 +54,7 @@ export function Island({
     e.stopPropagation();
     e.preventDefault();
     if (isRotating) {
-      const speedRotation = isMobile ? 0.025 : 0.01;
+      const speedRotation = isMobile ? 0.005 : 0.01;
 
       const clientX = e.touches ? e.touches[0].clientX : e.clientX;
 
