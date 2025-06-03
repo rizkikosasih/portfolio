@@ -20,7 +20,7 @@ const Skills = () => {
             <div className="block-container w-16 h-16 md:w-20 md:h-20" key={skill.name}>
               <div className="btn-back rounded-xl" />
               <div
-                data-tooltip-id={skill.name.trim().toLowerCase()}
+                data-tooltip-id="skill-tooltip"
                 data-tooltip-html={`<p class='font-semibold'>${skill.name}</p>`}
                 className="btn-front rounded-xl flex justify-center items-center">
                 <img
@@ -30,16 +30,16 @@ const Skills = () => {
                   loading="lazy"
                 />
               </div>
-
-              <Tooltip
-                id={skill.name.trim().toLowerCase()}
-                style={{
-                  background: 'linear-gradient(to right, #00c6ff, #0072ff)',
-                  color: 'rgb(224, 231, 225)'
-                }}
-              />
             </div>
           ))}
+
+          <Tooltip
+            id="skill-tooltip"
+            style={{
+              background: 'linear-gradient(to right, #00c6ff, #0072ff)',
+              color: 'rgb(224, 231, 225)'
+            }}
+          />
         </div>
       </div>
 
