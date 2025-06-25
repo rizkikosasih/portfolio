@@ -8,6 +8,7 @@ import bootstrap from './../assets/icons/bootstrap.svg';
 import codeigniter from './../assets/icons/codeigniter.svg';
 import contact from './../assets/icons/contact.svg';
 import css from './../assets/icons/css.svg';
+import expressjs from './../assets/icons/expressjs.svg';
 import git from './../assets/icons/git.svg';
 import github from './../assets/icons/github.svg';
 import html from './../assets/icons/html.svg';
@@ -15,8 +16,10 @@ import javascript from './../assets/icons/javascript.svg';
 import jquery from './../assets/icons/jquery.svg';
 import laravel from './../assets/icons/laravel.svg';
 import linkedin from './../assets/icons/linkedin.svg';
+import livewire from './../assets/icons/livewire.svg';
 import mysql from './../assets/icons/mysql.svg';
 import nodejs from './../assets/icons/nodejs.svg';
+import oracledb from './../assets/icons/oracledb.svg';
 import php from './../assets/icons/php.svg';
 import react from './../assets/icons/react.svg';
 import tailwindcss from './../assets/icons/tailwindcss.svg';
@@ -134,6 +137,11 @@ const skills = [
     type: 'Backend'
   },
   {
+    imageUrl: expressjs,
+    name: 'Express JS',
+    type: 'Backend'
+  },
+  {
     imageUrl: react,
     name: 'React JS',
     type: 'Frontend'
@@ -164,6 +172,11 @@ const skills = [
     type: 'Backend'
   },
   {
+    imageUrl: livewire,
+    name: 'Livewire',
+    type: 'Frontend'
+  },
+  {
     imageUrl: yii,
     name: 'Yii',
     type: 'Backend'
@@ -171,12 +184,17 @@ const skills = [
   {
     imageUrl: mysql,
     name: 'MySQL',
-    type: 'Backend'
+    type: 'Database'
   },
   {
     imageUrl: postgresql,
     name: 'PostgreSQL',
-    type: 'Backend'
+    type: 'Database'
+  },
+  {
+    imageUrl: oracledb,
+    name: 'Oracle Database',
+    type: 'Database'
   },
   {
     imageUrl: php,
@@ -228,41 +246,59 @@ const listFooter = ['/tentang', '/kemampuan', '/kontak'];
 
 const experiences = [
   {
-    title: 'Website Developer',
+    title: 'Backend PHP Programmer',
     company_name: 'PT. Gogobli Asia Teknologi',
     icon: ecommerce,
-    iconBg: '#accbe1',
+    iconBg: '#FF8282',
     date: 'Mei 2021 - April 2024',
     points: [
-      'Mengembangkan dan memelihara aplikasi CMS menggunakan PHP dan teknologi terkait lainnya.',
-      'Memelihara dan mengelola basis data menggunakan MYSQL.',
-      'Mengintegrasikan aplikasi web dengan pihak ketiga menggunakan API.',
-      'Berkaitan dengan pemesanan, inventaris, e-commerce, dan lain-lain.'
+      'Tech Stack: HTML, CSS, PHP, MySQL, JQuery, Bootstrap.',
+      'Mengintegrasikan aplikasi web dengan layanan pihak ketiga melalui API.',
+      'Menangani fitur terkait pemesanan, manajemen stok dan produk, serta modul operasional lainnya.',
+      'Mengembangkan fitur email otomatis untuk notifikasi sistem.',
+      'Membangun fitur ekspor laporan dalam format Excel dan CSV untuk keperluan administrasi dan analisis data.'
     ]
   },
   {
-    title: 'Freelance Website Developer',
+    title: 'Freelance Developer',
     company_name: 'Viama',
     icon: cashier,
-    iconBg: '#b7e4c7',
+    iconBg: '#FF6363',
     date: 'November 2022 - April 2024',
     points: [
-      'Mengembangkan dan memelihara aplikasi web menggunakan PHP, Laravel, dan teknologi terkait lainnya.',
-      'Menerapkan desain responsif dan memastikan kompatibilitas lintas browser.',
-      'Mengintegrasikan aplikasi web menggunakan API.',
-      'Membangun sistem kasir dan keanggotaan untuk memudahkan operasional.'
+      'Tech Stack: HTML, CSS, PHP, Laravel, JQuery, Bootstrap.',
+      'Menerapkan desain responsif dan memastikan kompatibilitas antar browser.',
+      'Membangun sistem kasir dan manajemen keanggotaan untuk mendukung operasional bisnis.',
+      'Mengintegrasikan aplikasi web dengan layanan internal melalui API yang disediakan tim proyek.',
+      'Membangun fitur generate dan unduh barcode serta QR Code.'
     ]
   },
   {
-    title: 'Website Developer',
+    title: 'Programmer Website',
     company_name: 'Kejaksaan Agung RI (DASKRIMTI)',
     icon: government,
-    iconBg: '#48A6A7',
+    iconBg: '#BEE4D0',
     date: 'Juni 2024 - Desember 2024',
     points: [
-      'Mengembangkan dan memelihara aplikasi CMS Simkari menggunakan PHP, Yii dan teknologi terkait lainnya.',
-      'Memelihara dan mengelola basis data menggunakan PostgreSQL.',
-      'Berkaitan dengan perkara-perkara tindak pidana umum.'
+      'Tech Stack: HTML, CSS, PHP, Yii2, PostgreSQL, JQuery, Bootstrap.',
+      'Menangani modul aplikasi yang berkaitan dengan perkara tindak pidana umum.',
+      'Mengembangkan fitur ekspor dokumen untuk kebutuhan persuratan.',
+      'Mengembangkan fitur impor dokumen sebagai bagian dari manajemen arsip digital.'
+    ]
+  },
+  {
+    title: 'PHP Developer',
+    company_name: 'BPJS Ketenagakerjaan',
+    icon: government,
+    iconBg: '#DBFFCB',
+    date: 'Mei 2025 - Saat ini',
+    points: [
+      'Tech Stack: HTML, CSS, PHP, Oracle DB, jQuery, Node.js, Express.js, JSReport.',
+      'Menangani modul aplikasi yang berkaitan dengan JP Berkala',
+      'Mengembangkan fitur ekspor laporan dalam format PDF dan Excel',
+      'Mengimplementasikan unit test untuk memastikan kualitas dan stabilitas kode',
+      'Mengintegrasikan aplikasi web dengan API internal untuk pertukaran data antar sistem',
+      'Membangun middleware menggunakan Node.js dan Express.js untuk menjembatani aplikasi web dengan JSReport Server.'
     ]
   }
 ];
