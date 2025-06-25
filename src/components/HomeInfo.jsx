@@ -9,7 +9,7 @@ const HomeInfo = ({ currentStage }) => {
         Hai, saya
         <span className="font-semibold mx-2">Rizki</span>👋
         <div>
-          Website Developer dari Indonesia{' '}
+          Programmer/Developer dari Indonesia{' '}
           <div className="indonesia inline-block">
             <div className="merah"></div>
             <div className="putih"></div>
@@ -41,7 +41,7 @@ const HomeInfo = ({ currentStage }) => {
     return (
       <div className="info-box">
         <div className="font-medium text-center sm:text-xl">
-          <p>Sebagai seorang Website Developer</p>
+          <p>Sebagai seorang Programmer/Developer</p>
           <p>dengan pengalaman lebih dari tiga tahun,</p>
           <p>saya telah terlibat dalam berbagai</p>
           <p>proyek pengembangan aplikasi berbasis web</p>
