@@ -7,7 +7,7 @@ import { experiences } from '../../constants';
 
 const ExperienceTimeline = () => (
   <VerticalTimeline>
-    {experiences.reverse().map((experience) => (
+    {experiences.map((experience) => (
       <VerticalTimelineElement
         key={experience.company_name}
         date={experience.date}
