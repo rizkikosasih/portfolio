@@ -291,7 +291,7 @@ const experiences = [
     company_name: 'BPJS Ketenagakerjaan',
     icon: government,
     iconBg: '#DBFFCB',
-    date: 'Mei 2025 - Saat ini',
+    date: 'Mei 2025 - Juli 2025',
     points: [
       'Tech Stack: HTML, CSS, PHP, Oracle DB, jQuery, Node.js, Express.js, JSReport.',
       'Menangani modul aplikasi yang berkaitan dengan JP Berkala',
