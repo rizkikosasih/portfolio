@@ -1,5 +1,5 @@
 import imgAbout from './../assets/images/photo.jpg';
-import CTA from './../components/CTA';
+import CTA from '../components/global/CTA.jsx';
 import AboutText from '../components/about/AboutText';
 import EducationList from '../components/about/EducationList';
 

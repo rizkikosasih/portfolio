@@ -1,4 +1,4 @@
-import Text from '../Text';
+import Text from '../global/Text.jsx';
 
 const AboutText = ({ imgAbout }) => (
   <>
@@ -13,7 +13,7 @@ const AboutText = ({ imgAbout }) => (
         <Text content="Dengan latar belakang ini, saya terus mencari tantangan baru dalam dunia teknologi, khususnya di perusahaan teknologi yang berkembang, untuk membangun aplikasi yang berdampak dan memberikan solusi terbaik bagi pengguna. 🚀" />
       </div>
       <div className="relative flex flex-col justify-center items-center mb-8 md:mb-0 md:flex-shrink-0 md:flex-grow-0 md:basis-auto md:w-1/2">
-        <img src={imgAbout} className="profile-image" loading="lazy" />
+        <img src={imgAbout} alt="image profile" className="profile-image" loading="lazy" />
       </div>
     </div>
   </>

@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import Loader from '../../components/Loader';
+import Loader from '../global/Loader.jsx';
 import Island from '../../models/Island';
 import Sky from '../../models/Sky';
 import Bird from '../../models/Bird';

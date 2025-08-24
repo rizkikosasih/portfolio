@@ -11,7 +11,7 @@
 
 * {
   scrollbar-width: thin !important;
-  scrollbar-color: transparent !important;
+  scrollbar-color: transparent transparent !important;
   scroll-behavior: smooth !important;
 }
 
@@ -35,91 +35,6 @@ body:has(.card[data-color='green']:hover) {
   user-select: none;
 }
 
-@layer utilities {
-  .max-container {
-    @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[100px] px-8 min-h-[calc(100vh-80px)];
-  }
-
-  .head-text {
-    @apply sm:text-5xl text-3xl font-semibold sm:leading-snug font-poppins;
-  }
-
-  .subhead-text {
-    @apply font-semibold sm:text-3xl text-xl relative font-poppins;
-  }
-
-  .blue-gradient_text {
-    @apply bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent;
-  }
-
-  .input {
-    @apply bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal shadow-card;
-  }
-
-  .textarea {
-    @apply block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-200 focus:ring-blue-500 focus:border-blue-500 mt-2.5 font-normal shadow-card;
-  }
-
-  .btn {
-    @apply text-white bg-gradient-to-r from-[#00c6ff] to-[#0072ff] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center;
-  }
-
-  .header {
-    @apply flex justify-between items-center sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 bg-transparent z-10 right-0 left-0;
-  }
-
-  .footer {
-    @apply max-w-5xl mx-auto sm:px-16 pb-6 px-8 flex flex-col gap-7;
-  }
-
-  .footer-container {
-    @apply flex flex-wrap gap-7 items-center justify-between;
-  }
-
-  .info-box {
-    @apply mx-5 relative flex text-white flex-col gap-3 max-w-2xl neo-brutalism-blue pt-4 pb-12 px-8;
-  }
-
-  .neo-btn {
-    @apply py-3 px-6 rounded-lg text-blue-500 text-center font-semibold sm:w-1/2 w-[90%] -bottom-5 absolute mx-auto right-0 left-0 flex justify-center items-center gap-3;
-  }
-
-  .cta {
-    @apply w-full flex items-center md:flex-row flex-col sm:mt-16 mt-8 gap-7;
-  }
-
-  .cta-text {
-    @apply text-black-500 font-extrabold flex-1 text-2xl md:text-3xl max-md:text-center;
-  }
-
-  .profile-image {
-    box-shadow:
-      0 0 10px #00c6ff,
-      0 0 15px #0072ff;
-    filter: brightness(1.2);
-    transition: box-shadow 0.3s ease;
-    @apply rounded-full w-[80%] h-[80%] object-cover bg-gradient-to-r from-[#00c6ff] to-[#0072ff];
-  }
-
-  .profile-image:hover {
-    box-shadow:
-      0 0 20px #00c6ff,
-      0 0 25px #0072ff;
-  }
-
-  .indonesia {
-    @apply w-[20px] h-[12px] border border-solid border-black-500 rounded-[1px];
-  }
-
-  .merah {
-    @apply bg-red-500 w-full h-1/2;
-  }
-
-  .putih {
-    @apply bg-white w-full h-1/2;
-  }
-}
-
 .glassmorphism {
   background: rgba(8, 116, 239, 0.07);
   backdrop-filter: blur(10px);
@@ -132,8 +47,8 @@ body:has(.card[data-color='green']:hover) {
   border-radius: 8.889px;
   background: #fff;
   box-shadow:
-    0px 10px 35px -4px rgba(67, 83, 255, 0.15),
-    0px 1.5px 4px -1px rgba(67, 83, 255, 0.2);
+    0 10px 35px -4px rgba(67, 83, 255, 0.15),
+    0 1.5px 4px -1px rgba(67, 83, 255, 0.2);
 }
 
 .block-container {
@@ -595,4 +510,137 @@ header.header.footer.hidden {
   --speed: 16;
   --delay: 6;
   --scale: 1.03;
+}
+
+@layer utilities {
+  .max-container {
+    @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[100px] px-8 min-h-[calc(100vh-80px)];
+  }
+
+  .head-text {
+    @apply sm:text-5xl text-3xl font-semibold sm:leading-snug font-poppins;
+  }
+
+  .subhead-text {
+    @apply font-semibold sm:text-3xl text-xl relative font-poppins;
+  }
+
+  .blue-gradient_text {
+    @apply bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent;
+  }
+
+  .input {
+    @apply bg-white border border-gray-200 text-gray-900 text-sm
+      rounded-lg focus:ring-blue-500 focus:border-blue-500 block
+      w-full p-2.5 mt-2.5 font-normal shadow-card;
+  }
+
+  .textarea {
+    @apply block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg
+      border border-gray-200 focus:ring-blue-500 focus:border-blue-500
+      mt-2.5 font-normal shadow-card;
+  }
+
+  .custom-btn {
+    @apply text-white bg-gradient-to-r from-[#00c6ff] to-[#0072ff]
+      focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium
+      rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center;
+  }
+
+  .custom-btn-primary {
+    @apply text-white text-center rounded-lg
+      bg-gradient-to-r from-[#00c6ff] to-[#0072ff]
+      hover:opacity-90 transition;
+  }
+
+  .btn-audio {
+    @apply relative inline-flex items-center justify-center p-0.5
+      overflow-hidden text-sm font-medium bg-gray-900 text-white
+      rounded-full bg-gradient-to-br from-green-400 to-blue-600
+      group-hover:from-green-400 group-hover:to-blue-600
+      hover:text-white focus:ring-4 focus:outline-none focus:ring-green-800;
+  }
+
+  .project-wrapper {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center md:justify-items-stretch;
+  }
+
+  .project-card {
+    @apply bg-white rounded-2xl shadow-xl overflow-hidden
+      border border-gray-100 hover:shadow-2xl
+      transition-shadow duration-300 flex flex-col md:flex-row max-w-md;
+  }
+
+  .project-card > figure {
+    @apply overflow-hidden md:w-1/2;
+  }
+
+  .project-card > figure > .image {
+    @apply w-full h-72 md:h-full object-cover transition-transform duration-300;
+  }
+
+  .project-card > .content {
+    @apply p-5 flex flex-col justify-between md:w-1/2
+    bg-white/30 backdrop-blur-md border border-white/20
+    h-auto md:h-full;
+  }
+
+  .header {
+    @apply flex justify-between items-center sm:px-16
+      px-8 py-4 max-w-5xl mx-auto absolute top-0
+      bg-transparent z-10 right-0 left-0;
+  }
+
+  .footer {
+    @apply max-w-5xl mx-auto sm:px-16 pb-6 px-8 flex flex-col gap-7;
+  }
+
+  .footer-container {
+    @apply flex flex-wrap gap-7 items-center justify-between;
+  }
+
+  .info-box {
+    @apply mx-5 relative flex text-white flex-col gap-3 max-w-2xl neo-brutalism-blue pt-4 pb-12 px-8;
+  }
+
+  .neo-btn {
+    @apply py-3 px-6 rounded-lg text-blue-500 text-center font-semibold
+      sm:w-1/2 w-[90%] -bottom-5 absolute mx-auto right-0 left-0
+      flex justify-center items-center gap-3;
+  }
+
+  .cta {
+    @apply w-full flex items-center md:flex-row flex-col sm:mt-16 mt-8 gap-7;
+  }
+
+  .cta-text {
+    @apply text-black-500 font-extrabold flex-1 text-2xl md:text-3xl max-md:text-center;
+  }
+
+  .profile-image {
+    box-shadow:
+      0 0 10px #00c6ff,
+      0 0 15px #0072ff;
+    filter: brightness(1.2);
+    transition: box-shadow 0.3s ease;
+    @apply rounded-full w-[80%] h-[80%] object-cover bg-gradient-to-r from-[#00c6ff] to-[#0072ff];
+  }
+
+  .profile-image:hover {
+    box-shadow:
+      0 0 20px #00c6ff,
+      0 0 25px #0072ff;
+  }
+
+  .indonesia {
+    @apply w-[20px] h-[12px] border border-solid border-black-500 rounded-[1px];
+  }
+
+  .merah {
+    @apply bg-red-500 w-full h-1/2;
+  }
+
+  .putih {
+    @apply bg-white w-full h-1/2;
+  }
 }

@@ -1,23 +1,16 @@
-import CTA from './../components/CTA';
+import CTA from '../components/global/CTA.jsx';
 import SkillsList from '../components/skill/SkillsList';
 import ExperienceTimeline from '../components/skill/ExperienceTimeline';
+import Project from '../components/skill/Project.jsx';
 
 const Skills = () => (
   <section className="max-container">
-    <h1 className="head-text">
-      <span className="blue-gradient_text">Kemampuan</span> Saya
-    </h1>
     <SkillsList />
-    <div className="title py-8">
-      <h1 className="head-text">Pengalaman Kerja</h1>
-      <p className="mt-4 text-slate-500">
-        Selama perjalanan saya dalam membangun dan mengembangkan website, saya telah
-        memperoleh berbagai pengalaman berharga. Berikut adalah rangkuman pencapaian dan
-        keahlian saya:
-      </p>
-    </div>
+
     <ExperienceTimeline />
-    <hr className="border-slate-200" />
+
+    <Project />
+
     <CTA />
   </section>
 );

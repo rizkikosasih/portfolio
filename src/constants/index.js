@@ -1,8 +1,8 @@
-import {catSize} from './catSize';
-import {skills} from './skill';
-import {socialLinks} from './socialLink';
-import {experiences} from './experience';
-import {educations} from './education';
+import { catSize } from './catSize';
+import { skills } from './skill';
+import { socialLinks } from './socialLink';
+import { experiences } from './experience';
+import { educations } from './education';
 
 const listMenu = [
   { path: '/', name: '', element: '../pages/Home' },

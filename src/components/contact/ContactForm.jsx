@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { emailConfig } from '../../config/email';
+import { motion } from 'motion/react';
 
 const ContactForm = ({ formRef, setCurrentAnimation, showAlert, hideAlert }) => {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -86,14 +87,15 @@ const ContactForm = ({ formRef, setCurrentAnimation, showAlert, hideAlert }) => 
         value={form.message}
       />
 
-      <button
-        className="btn"
+      <motion.button
+        className="custom-btn"
         disabled={isLoading}
         type="submit"
         onBlur={handleBlur}
-        onFocus={handleFocus}>
+        onFocus={handleFocus}
+        whileTap={{ scale: 0.95 }}>
         {isLoading ? 'Mengirim ...' : 'Kirim Pesan'}
-      </button>
+      </motion.button>
     </form>
   );
 };

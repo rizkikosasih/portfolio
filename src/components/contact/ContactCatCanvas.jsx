@@ -1,6 +1,6 @@
 import { Suspense, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
-import Loader from '../Loader';
+import Loader from '../global/Loader.jsx';
 import Cat from '../../models/Cat';
 import { catSize } from '../../constants';
 

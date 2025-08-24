@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import HomeInfo from '../components/HomeInfo';
+import HomeInfo from '../components/global/HomeInfo.jsx';
 import Home3DScene from '../components/home/Home3DScene';
 import AudioButton from '../components/home/AudioButton';
 import bgMusic from './../assets/music/bg-music.mp3';

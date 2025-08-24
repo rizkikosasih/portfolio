@@ -1,6 +1,8 @@
-import React from 'react';
+import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { IoArrowForward } from 'react-icons/io5';
+
+const MotionLink = motion.create(Link);
 
 const HomeInfo = ({ currentStage }) => {
   if (currentStage === 1) {
@@ -29,10 +31,14 @@ const HomeInfo = ({ currentStage }) => {
           <p>sepanjang perjalanan tersebut</p>
         </div>
 
-        <Link to="/tentang" className="neo-brutalism-white neo-btn">
+        <MotionLink
+          to="/tentang"
+          className="neo-brutalism-white neo-btn"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}>
           Lebih Lanjut
           <IoArrowForward />
-        </Link>
+        </MotionLink>
       </div>
     );
   }
@@ -47,10 +53,14 @@ const HomeInfo = ({ currentStage }) => {
           <p>proyek pengembangan aplikasi berbasis web</p>
         </div>
 
-        <Link to="/kemampuan" className="neo-brutalism-white neo-btn">
+        <MotionLink
+          to="/kemampuan"
+          className="neo-brutalism-white neo-btn"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}>
           Kemampuan Saya
           <IoArrowForward />
-        </Link>
+        </MotionLink>
       </div>
     );
   }
@@ -64,10 +74,14 @@ const HomeInfo = ({ currentStage }) => {
           <p>dengan solusi yang efektif dan tepat sasaran</p>
         </div>
 
-        <Link to="/kontak" className="neo-brutalism-white neo-btn">
+        <MotionLink
+          to="/kontak"
+          className="neo-brutalism-white neo-btn"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}>
           Kontak Saya
           <IoArrowForward />
-        </Link>
+        </MotionLink>
       </div>
     );
   }

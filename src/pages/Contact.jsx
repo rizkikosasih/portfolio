@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
-import Alert from './../components/Alert';
+import Alert from '../components/global/Alert.jsx';
 import ContactForm from '../components/contact/ContactForm';
 import ContactCatCanvas from '../components/contact/ContactCatCanvas';
 import Bubbles from '../components/contact/Bubbles';

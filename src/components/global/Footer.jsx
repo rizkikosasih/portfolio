@@ -1,5 +1,6 @@
+import { motion } from 'motion/react';
 import { Link, useLocation } from 'react-router-dom';
-import { socialLinks, listFooter } from '../constants';
+import { socialLinks, listFooter } from '../../constants/index.js';
 
 const Footer = () => {
   const location = useLocation();
@@ -17,10 +18,11 @@ const Footer = () => {
         <div className="flex gap-3 justify-center items-center">
           {socialLinks.map((link) => (
             <Link key={link.name} to={link.link} target="_blank">
-              <img
+              <motion.img
                 src={link.iconUrl}
                 alt={link.name}
-                className={`w-6 h-6 object-contain ${location.pathname == '/kontak' && link.link == '/kontak' ? 'hidden' : ''}`}
+                className={`w-6 h-6 object-contain ${location.pathname === '/kontak' && link.link === '/kontak' ? 'hidden' : ''}`}
+                whileHover={{ scale: 1.05 }}
               />
             </Link>
           ))}
