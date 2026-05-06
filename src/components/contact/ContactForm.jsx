@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { emailConfig } from '../../config/email';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 
 const ContactForm = ({ formRef, setCurrentAnimation, showAlert, hideAlert }) => {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -46,7 +46,7 @@ const ContactForm = ({ formRef, setCurrentAnimation, showAlert, hideAlert }) => 
 
   return (
     <form
-      className="w-full flex flex-col gap-7 mt-10"
+      className="mt-10 flex w-full flex-col gap-7"
       onSubmit={handleSubmit}
       ref={formRef}>
       <label className="font-semibold text-black-500">Nama</label>

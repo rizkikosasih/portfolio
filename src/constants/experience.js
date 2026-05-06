@@ -9,27 +9,21 @@ export const experiences = [
     icon: government,
     iconBg: '#DBFFCB',
     date: 'Mei 2025 - Juli 2025',
-    points: [
-      'Tech Stack: HTML, CSS, PHP, Oracle DB, jQuery, Node.js, Express.js, JSReport.',
-      'Menangani modul aplikasi yang berkaitan dengan JP Berkala',
-      'Mengembangkan fitur ekspor laporan dalam format PDF dan Excel',
-      'Mengimplementasikan unit test untuk memastikan kualitas dan stabilitas kode',
-      'Mengintegrasikan aplikasi web dengan API internal untuk pertukaran data antar sistem',
-      'Membangun middleware menggunakan Node.js dan Express.js untuk menjembatani aplikasi web dengan JSReport Server.'
-    ]
+    description:
+      'Bekerja di bawah PT Indocyber Global Teknologi untuk penempatan di BPJS Ketenagakerjaan. Bertanggung jawab menangani modul aplikasi JP Berkala, fitur ekspor laporan PDF/Excel, serta membangun middleware Node.js untuk integrasi JSReport Server.',
+    techStack: ['PHP', 'Oracle DB', 'jQuery', 'Node.js', 'Express.js', 'JSReport'],
+    gridSize: 'large'
   },
   {
     title: 'Programmer Website',
-    company_name: 'Kejaksaan Agung RI (DASKRIMTI)',
+    company_name: 'Kejaksaan Agung RI',
     icon: government,
     iconBg: '#BEE4D0',
     date: 'Juni 2024 - Desember 2024',
-    points: [
-      'Tech Stack: HTML, CSS, PHP, Yii2, PostgreSQL, JQuery, Bootstrap.',
-      'Menangani modul aplikasi yang berkaitan dengan perkara tindak pidana umum.',
-      'Mengembangkan fitur ekspor dokumen untuk kebutuhan persuratan.',
-      'Mengembangkan fitur impor dokumen sebagai bagian dari manajemen arsip digital.'
-    ]
+    description:
+      'Melalui PT Maxxima Innovative Engineering, saya ditugaskan untuk menangani modul aplikasi perkara tindak pidana umum dan mengembangkan sistem manajemen arsip digital yang efisien.',
+    techStack: ['PHP', 'Yii2', 'PostgreSQL', 'jQuery', 'Bootstrap'],
+    gridSize: 'small'
   },
   {
     title: 'Freelance Developer',
@@ -37,13 +31,10 @@ export const experiences = [
     icon: cashier,
     iconBg: '#FF6363',
     date: 'November 2022 - April 2024',
-    points: [
-      'Tech Stack: HTML, CSS, PHP, Laravel, JQuery, Bootstrap.',
-      'Menerapkan desain responsif dan memastikan kompatibilitas antar browser.',
-      'Membangun sistem kasir dan manajemen keanggotaan untuk mendukung operasional bisnis.',
-      'Mengintegrasikan aplikasi web dengan layanan internal melalui API yang disediakan tim proyek.',
-      'Membangun fitur generate dan unduh barcode serta QR Code.'
-    ]
+    description:
+      'Membangun sistem kasir dan manajemen keanggotaan dengan desain responsif. Mengintegrasikan layanan internal melalui API serta mengembangkan fitur generator barcode dan QR Code.',
+    techStack: ['PHP', 'Laravel', 'jQuery', 'Bootstrap', 'API Integration'],
+    gridSize: 'small'
   },
   {
     title: 'Backend PHP Programmer',
@@ -51,12 +42,9 @@ export const experiences = [
     icon: ecommerce,
     iconBg: '#FF8282',
     date: 'Mei 2021 - April 2024',
-    points: [
-      'Tech Stack: HTML, CSS, PHP, MySQL, JQuery, Bootstrap.',
-      'Mengintegrasikan aplikasi web dengan layanan pihak ketiga melalui API.',
-      'Menangani fitur terkait pemesanan, manajemen stok dan produk, serta modul operasional lainnya.',
-      'Mengembangkan fitur email otomatis untuk notifikasi sistem.',
-      'Membangun fitur ekspor laporan dalam format Excel dan CSV untuk keperluan administrasi dan analisis data.'
-    ]
+    description:
+      'Mengelola fitur pemesanan dan manajemen stok pada platform e-commerce. Mengembangkan sistem email otomatis dan fitur ekspor laporan data (Excel/CSV) serta integrasi layanan pihak ketiga.',
+    techStack: ['PHP', 'MySQL', 'jQuery', 'Bootstrap', 'API'],
+    gridSize: 'small'
   }
 ];

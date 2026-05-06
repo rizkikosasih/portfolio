@@ -1,19 +1,36 @@
 import movie_app from '../assets/images/movie_app.jpeg';
 import crm_whatsapp from '../assets/images/crm_whatsapp.png';
+import task_api_schema from '../assets/images/task_api_schema.png';
 
 export const projects = [
   {
+    title: 'Task Management API',
+    description:
+      'Robust API untuk manajemen tugas, mencakup autentikasi pengguna, manajemen proyek, pelacakan waktu, dan pelaporan menggunakan standar keamanan terbaru.',
+    image: task_api_schema,
+    type: 'backend',
+    techStack: ['Laravel', 'MySQL', 'Sanctum', 'Spatie Roles', 'GitHub Actions'],
+    link: null,
+    repository: 'https://github.com/rizkikosasih/laravel-task-api'
+  },
+  {
     title: 'Movie App',
-    description: `Aplikasi katalog film dengan banner carousel, pencarian cepat, pagination, dan detail via modal. Data diambil dari OMDb API. <br/><br/>
-      <b>Tech stack</b>: React • Vite • React Router • Tailwind CSS • Daisy UI • Swiper • react-spinners • ESLint • Prettier • gh-pages (Yarn)`,
+    description:
+      'Aplikasi katalog film responsif dengan integrasi OMDb API. Diimplementasikan dengan sistem otomatisasi deployment untuk memastikan versi terbaru selalu tersedia secara publik.',
     image: movie_app,
-    link: 'https://rizkikosasih.github.io/movie-app/'
+    type: 'frontend',
+    techStack: ['React', 'Vite', 'Tailwind CSS', 'Daisy UI', 'GitHub Pages'],
+    link: 'https://rizkikosasih.github.io/movie-app/',
+    repository: 'https://github.com/rizkikosasih/movie-app'
   },
   {
     title: 'CRM Whatsapp Web',
-    description: `Aplikasi CRM terintegrasi WhatsApp Web untuk mengelola interaksi pelanggan, kontak, dan aktivitas tim melalui dashboard AdminLTE. Mendukung setup cepat, integrasi API dengan Axios, dan build frontend modern via Vite. <br/><br/>
-      <b>Tech stack</b>: Laravel (PHP) • MySQL • Vite • Bootstrap 4 • AdminLTE • jQuery • Axios • Font Awesome • laravel-vite-plugin • Prettier • Yarn`,
+    description:
+      'Aplikasi CRM terintegrasi WhatsApp Web untuk mengelola interaksi pelanggan dan aktivitas tim melalui dashboard AdminLTE yang responsif.',
     image: crm_whatsapp,
-    link: 'https://github.com/rizkikosasih/crm-web-whatsapp'
+    type: 'fullstack',
+    techStack: ['Laravel', 'MySQL', 'Bootstrap', 'AdminLTE', 'jQuery'],
+    link: null,
+    repository: 'https://github.com/rizkikosasih/crm-web-whatsapp'
   }
 ];

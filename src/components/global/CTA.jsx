@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const MotionLink = motion.create(Link);
@@ -8,7 +8,7 @@ const CTA = () => {
     <section className="cta">
       <p className="cta-text md:text-[1.875rem]">
         Memiliki proyek di pikiran?
-        <br className="sm:block hidden" />
+        <br className="hidden sm:block" />
         Ayo, kita wujudkan bersama!
       </p>
 

@@ -1,24 +1,25 @@
 import { skills } from '../../constants';
 import { Tooltip } from 'react-tooltip';
+import Divider from '../global/Divider.jsx';
 
 const SkillsList = () => (
-  <div>
+  <section id="skills">
     <h1 className="head-text">
       <span className="blue-gradient_text">Kemampuan</span> Saya
     </h1>
     <div className="flex flex-col">
-      <div className="mt-8 flex flex-wrap gap-12 justify-center md:justify-normal">
+      <div className="mt-8 flex flex-wrap justify-center gap-12 md:justify-normal">
         {skills.map((skill) => (
-          <div className="block-container w-16 h-16 md:w-20 md:h-20" key={skill.name}>
+          <div className="block-container h-16 w-16 md:h-20 md:w-20" key={skill.name}>
             <div className="btn-back rounded-xl" />
             <div
               data-tooltip-id="skill-tooltip"
               data-tooltip-html={`<p class='font-semibold'>${skill.name}</p>`}
-              className="btn-front rounded-xl flex justify-center items-center">
+              className="btn-front flex items-center justify-center rounded-xl">
               <img
                 src={skill.imageUrl}
                 alt={skill.name}
-                className="w-1/2 h-1/2 object-contain"
+                className="h-1/2 w-1/2 object-contain"
                 loading="lazy"
               />
             </div>
@@ -33,7 +34,9 @@ const SkillsList = () => (
         />
       </div>
     </div>
-  </div>
+
+    <Divider />
+  </section>
 );
 
 export default SkillsList;

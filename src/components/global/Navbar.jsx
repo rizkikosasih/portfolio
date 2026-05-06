@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { NavLink, useLocation } from 'react-router-dom';
 import { listMenu } from '../../constants/index.js';
 
@@ -16,11 +16,11 @@ const Navbar = () => {
         to="/"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        className="w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md">
+        className="flex h-10 w-10 items-center justify-center rounded-lg bg-white font-bold shadow-md">
         <p className="blue-gradient_text">RK</p>
       </MotionNavLink>
 
-      <nav className="flex text-lg gap-2 md:gap-7 font-medium">
+      <nav className="flex gap-2 text-lg font-medium md:gap-7">
         {listMenu.map((v, i) => {
           if (i > 0) {
             return (

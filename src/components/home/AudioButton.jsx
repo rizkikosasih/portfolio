@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { IoPlayCircleOutline, IoPauseCircleOutline } from 'react-icons/io5';
 
 const AudioButton = ({ isPlayMusic, handleClick }) => (
@@ -7,11 +7,11 @@ const AudioButton = ({ isPlayMusic, handleClick }) => (
       className="btn-audio group"
       onClick={handleClick}
       whileHover={{ scale: 1.05 }}>
-      <span className="relative p-1 transition-all ease-in duration-75 bg-gray-900 rounded-full group-hover:bg-opacity-0">
+      <span className="relative rounded-full bg-gray-900 p-1 transition-all duration-75 ease-in group-hover:bg-opacity-0">
         {!isPlayMusic ? (
-          <IoPlayCircleOutline className="w-8 h-8" />
+          <IoPlayCircleOutline className="h-8 w-8" />
         ) : (
-          <IoPauseCircleOutline className="w-8 h-8" />
+          <IoPauseCircleOutline className="h-8 w-8" />
         )}
       </span>
     </motion.button>

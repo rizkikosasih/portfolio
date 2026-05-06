@@ -9,7 +9,6 @@
     "ecmel.vscode-html-css",
     "bradlc.vscode-tailwindcss",
     "antfu.vite",
-    "gamunu.vscode-yarn",
     "esbenp.prettier-vscode",
     "wix.vscode-import-cost",
     "xabikos.reactsnippets",
@@ -19,6 +18,7 @@
     "jasonnutter.search-node-modules",
     "burkeholland.simple-react-snippets",
     "planbcoding.vscode-react-refactor",
-    "dsznajder.es7-react-js-snippets"
+    "dsznajder.es7-react-js-snippets",
+    "streetsidesoftware.code-spell-checker"
   ]
 }
