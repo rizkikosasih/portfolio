@@ -10,8 +10,8 @@ export const experiences = [
     iconBg: '#DBFFCB',
     date: 'Mei 2025 - Juli 2025',
     description:
-      'Bekerja di bawah PT Indocyber Global Teknologi untuk penempatan di BPJS Ketenagakerjaan. Bertanggung jawab menangani modul aplikasi JP Berkala, fitur ekspor laporan PDF/Excel, serta membangun middleware Node.js untuk integrasi JSReport Server.',
-    techStack: ['PHP', 'Oracle DB', 'jQuery', 'Node.js', 'Express.js', 'JSReport'],
+      'Bekerja di bawah PT Indocyber Global Teknologi untuk mengembangkan modul JP Berkala dan fitur ekspor laporan operasional (PDF & Excel). Saya membangun middleware Node.js & Express.js untuk integrasi JSReport Server serta mengintegrasikan API internal. Selain itu, saya bertanggung jawab memonitor pipeline Jenkins pasca-merge ke branch develop untuk memastikan stabilitas deployment di DEV environment dalam kerangka kerja Agile/Scrum.',
+    techStack: ['PHP', 'Oracle DB', 'Node.js', 'Express.js', 'JSReport', 'Jenkins'],
     gridSize: 'large'
   },
   {
