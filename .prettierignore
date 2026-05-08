@@ -1,0 +1,32 @@
+# Build & Output
+dist
+dist-ssr
+build
+.next
+.vercel
+
+# Dependencies
+node_modules
+
+# CMS (Sanity)
+# Jika kamu menginstall Sanity di dalam folder yang sama
+/studio/node_modules
+/studio/dist
+
+# Assets & Static
+public
+*.svg
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.pdf
+
+# Lockfiles
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Configs
+.env
+.gitignore

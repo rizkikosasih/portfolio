@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "christian-kohler.path-intellisense",
+    "clarkio.lucide-icons",
+    "sanity-io.vscode-sanity",
+    "dsznajder.es7-react-js-snippets",
+    "mattpocock.ts-error-translator",
+    "afnizarnur.framer-snippets-vscode"
+  ]
+}
