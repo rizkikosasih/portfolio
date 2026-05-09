@@ -19,7 +19,7 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="border-input bg-background hover:bg-accent hover:text-accent-foreground focus-visible:ring-ring border-input bg-background hover:bg-accent hover:text-accent-foreg-g items-cente-smcus-visible:ring-1 focus-visible:outoutline-none inline-flex h-9 w-9"
+      className="border-input bg-background hover:bg-accent hover:text-accent-foreground focus-visible:ring-ring border-input bg-background hover:bg-accent hover:text-accent-foreg-g items-cente-smcus-visible:ring-1 focus-visible:outoutline-none inline-flex h-9 w-9 hover:cursor-pointer"
       aria-label="Toggle theme"
     >
       {theme === 'dark' ? (
