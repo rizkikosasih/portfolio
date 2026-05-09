@@ -23,7 +23,7 @@ export interface Contact {
 export interface Education {
   school: string
   major?: string
-  periode: string
+  period: string
   description: string
 }
 
