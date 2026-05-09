@@ -1,20 +1,66 @@
 {
+  /* ==========================================================
+     FORMATTER & LINTER SETTINGS
+     ========================================================== */
+  // Menggunakan Prettier sebagai formatter utama
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // Aktifkan format otomatis saat save
   "editor.formatOnSave": true,
+  // Menjalankan auto-fix ESLint saat save
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "always"
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
   },
+
+  /* ==========================================================
+     PRETTIER STRICT CONFIGURATION
+     (Memaksa penggunaan config lokal project)
+     ========================================================== */
+  "prettier.requireConfig": true,
+  "prettier.configPath": ".prettierrc",
+  "prettier.ignorePath": ".prettierignore",
+  // Gunakan package prettier dari node_modules lokal jika ada
+  "prettier.resolveGlobalModules": false,
+
+  /* ==========================================================
+     ESLINT CONFIGURATION
+     ========================================================== */
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown"
+  ],
+  // Mendukung monorepo atau folder bersarang secara dinamis
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+
+  /* ==========================================================
+     TAILWIND CSS & INTELLISENSE
+     ========================================================== */
   "tailwindCSS.experimental.classRegex": [
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*)\"['`]"],
-    ["cx\\(([^)]*)\\)", "[\"'`]([^\"'`]*)\"['`]"]
+    ["cx\\(([^)]*)\\)", "[\"'`]([^\"'`]*)\"['`]"],
+    ["clsx\\(([^)]*)\\)", "[\"'`]([^\"'`]*)\"['`]"],
+    ["twMerge\\(([^)]*)\\)", "[\"'`]([^\"'`]*)\"['`]"]
   ],
   "editor.quickSuggestions": {
     "strings": true
   },
+
+  /* ==========================================================
+     MISC & OPTIMIZATION
+     ========================================================== */
+  // Nonaktifkan Copilot jika tidak dibutuhkan (opsional)
   "github.copilot.enable": {
-    "*": false
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
   },
-  "eslint.workingDirectories": ["./studio", "./"],
-  "prettier.configPath": ".prettierrc",
-  "prettier.ignorePath": ".prettierignore"
+  // Menghindari konflik antara format manual dan format otomatis
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false
 }
