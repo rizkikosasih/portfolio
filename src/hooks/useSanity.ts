@@ -1,17 +1,16 @@
 import { useState, useEffect } from 'react'
 import { client } from '../lib/sanity.client'
-import { portfolioQuery } from '../lib/sanity.queries'
-import type { PortfolioData } from '../types/portfolio'
 
-export const usePortfolio = () => {
-  const [data, setData] = useState<PortfolioData | null>(null)
+export const useSanity = <T>(query: string) => {
+  const [data, setData] = useState<T | null>(null)
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<unknown>(null)
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await client.fetch(portfolioQuery)
+        setLoading(true)
+        const result = await client.fetch(query)
         setData(result)
       } catch (err) {
         setError(err)
@@ -21,7 +20,7 @@ export const usePortfolio = () => {
     }
 
     fetchData()
-  }, [])
+  }, [query])
 
   return { data, loading, error }
 }
