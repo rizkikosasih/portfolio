@@ -1,50 +1,46 @@
-import { usePortfolio } from './hooks/usePortfolio'
+import { Navbar } from './components/layout'
+import {
+  Hero,
+  SectionWrapper,
+  Skillset,
+  Projects,
+  Education,
+  Experience,
+  Contact,
+} from './components/features'
 
-function App() {
-  const { data, loading, error } = usePortfolio()
-
-  // 1. Cek status Loading
-  if (loading) {
-    return (
-      <div className="flex h-screen items-center justify-center">
-        <p className="animaan-pulse teimate-pulse text-xl">
-          Menghubungkan ke Sanity...
-        </p>
-      </div>
-    )
-  }
-
-  // 2. Cek status Error
-  if (error) {
-    return (
-      <div className="flex h-screen items-center justify-center text-red-500">
-        <p>Waduh, ada masalah: {JSON.stringify(error)}</p>
-      </div>
-    )
-  }
-
-  // 3. Cek hasil Data di Console
-  console.log('--- DATA DARI SANITY ---')
-  console.log('About:', data?.about)
-  console.log('Skills:', data?.skills)
-  console.log('Experiences:', data?.experiences)
-  console.log('Projects:', data?.projects)
-  console.log('------------------------')
-
+const App = () => {
   return (
-    <div className="p-10">
-      <h1 className="text-3xl font-bold text-green-600">
-        Koneksi Berhasil! ✅roundedlgp4
-      </h1>
-      <p className="mt-4">
-        '' Buka <b>Inspect Element (F12)</b> lalu cek tab <b>Console</b> untuk
-        melihat datamu.
-      </p>
+    <div className="bg-background text-foreground selection:bg-primary/10 min-h-screen transition-colors duration-300">
+      <Navbar />
 
-      <div className="mt-8 rounded-lg bg-gray-100 p-4">
-        <h2 className="font-bold">Tes Data Bio:</h2>
-        <p>{data?.about?.bio || 'Bio belum diisi'}</p>
-      </div>
+      <main className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-primary/5 pointer-events-none absolute top-0 left-1/2 -z-10 h-125 w-full -translate-x-1/2 blur-3xl" />
+
+        <SectionWrapper id="hero">
+          <Hero />
+        </SectionWrapper>
+
+        <SectionWrapper id="skillset">
+          <Skillset />
+        </SectionWrapper>
+
+        <SectionWrapper id="projects">
+          <Projects />
+        </SectionWrapper>
+
+        <SectionWrapper id="experience">
+          <Experience />
+        </SectionWrapper>
+
+        <SectionWrapper id="education">
+          <Education />
+        </SectionWrapper>
+
+        <SectionWrapper id="contact">
+          <Contact />
+        </SectionWrapper>
+      </main>
     </div>
   )
 }
