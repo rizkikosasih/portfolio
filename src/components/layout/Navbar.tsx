@@ -47,7 +47,6 @@ const Navbar = () => {
           <ThemeToggle />
         </nav>
 
-        {/* Mobile Toggle (Bisa dikembangkan nanti) */}
         <div className="flex items-center gap-4 md:hidden">
           <ThemeToggle />
         </div>
