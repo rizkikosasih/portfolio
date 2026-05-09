@@ -62,5 +62,6 @@
   },
   // Menghindari konflik antara format manual dan format otomatis
   "editor.formatOnPaste": false,
-  "editor.formatOnType": false
+  "editor.formatOnType": false,
+  "js/ts.tsdk.path": "node_modules\\typescript\\lib"
 }

@@ -34,7 +34,6 @@ export default tseslint.config(
         { allowConstantExport: true },
       ],
       'tailwindcss/classnames-order': 'off',
-      'prettier/prettier': 'error',
       '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
       '@typescript-eslint/no-unused-vars': ['warn'],
     },
