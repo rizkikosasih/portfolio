@@ -7,7 +7,7 @@ import prettierPlugin from 'eslint-plugin-prettier'
 import eslintConfigPrettier from 'eslint-config-prettier' // Tambahkan ini
 
 export default tseslint.config(
-  { ignores: ['dist', 'studio'] },
+  { ignores: ['dist', 'studio', 'node_modules'] },
   {
     extends: [
       js.configs.recommended,
@@ -33,8 +33,20 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
-      'prettier/prettier': 'error',
+      'prettier/prettier': [
+        'error',
+        {
+          semi: false,
+          singleQuote: true,
+          jsxSingleQuote: false,
+          trailingComma: 'all',
+          tabWidth: 2,
+          endOfLine: 'lf',
+          plugins: ['prettier-plugin-tailwindcss'],
+        },
+      ],
       '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
+      '@typescript-eslint/no-unused-vars': ['warn'],
     },
   },
 )
