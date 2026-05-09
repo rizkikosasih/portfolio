@@ -1,4 +1,4 @@
-import { Navbar } from './components/layout'
+import { Navbar } from '@/components/layout'
 import {
   Hero,
   SectionWrapper,
@@ -7,7 +7,7 @@ import {
   Education,
   Experience,
   Contact,
-} from './components/features'
+} from '@/components/features'
 
 const App = () => {
   return (
