@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { client } from '@/lib/sanity.client'
+import { client } from '@/lib/sanity'
 
 export const useSanity = <T>(query: string) => {
   const [data, setData] = useState<T | null>(null)
