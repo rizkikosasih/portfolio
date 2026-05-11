@@ -2,8 +2,8 @@ import { useSanity } from '@/hooks/useSanity'
 import { heroQuery, getFileUrl, urlFor } from '@/lib/sanity'
 import { Skeleton } from '@/components/ui'
 import type { HeroData } from './hero.types'
-import { HeroContent } from './HeroContent'
-import { HeroImage } from './HeroImage'
+import HeroContent from './HeroContent'
+import HeroImage from './HeroImage'
 
 const Hero = () => {
   const { data, loading } = useSanity<HeroData>(heroQuery)

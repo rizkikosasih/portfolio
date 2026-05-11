@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, Download } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui'
 import type { HeroContentProps } from './hero.types'
 
-export const HeroContent = ({ name, bio, resumeUrl }: HeroContentProps) => {
+const HeroContent = ({ name, bio, resumeUrl }: HeroContentProps) => {
   return (
     <div className="flex-1 text-center lg:text-left">
       <motion.div

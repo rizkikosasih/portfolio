@@ -1,6 +1,6 @@
 import type { HeroBlobProps } from "./hero.types"
 
-export const BlobProfile = ({ className }: HeroBlobProps) => {
+const HeroProfileBlob = ({ className }: HeroBlobProps) => {
   return (
     <svg
       viewBox="816.199951171875 55.399993896484375 103.60009765625 103.10000610351562"
@@ -62,3 +62,5 @@ export const BlobProfile = ({ className }: HeroBlobProps) => {
     </svg>
   )
 }
+
+export default HeroProfileBlob

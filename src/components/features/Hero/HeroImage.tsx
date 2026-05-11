@@ -1,20 +1,20 @@
 import { motion } from 'framer-motion'
 import type { HeroImageProps } from './hero.types'
-import { BlobProfile } from './HeroBlob'
+import HeroProfileBlob from './HeroProfileBlob'
 
-export const HeroImage = ({ src, alt }: HeroImageProps) => {
+const HeroImage = ({ src, alt }: HeroImageProps) => {
   return (
     <div className="relative flex items-center justify-center p-10 sm:p-14 md:p-18 lg:p-24 xl:p-32">
       <motion.div className="text-primary/20 dark:text-primary/25 absolute z-0">
-        <BlobProfile className="h-44 w-44 sm:h-56 sm:w-56 md:h-68 md:w-68 lg:h-80 lg:w-80 xl:h-88 xl:w-88" />
+        <HeroProfileBlob className="h-44 w-44 sm:h-56 sm:w-56 md:h-68 md:w-68 lg:h-80 lg:w-80 xl:h-88 xl:w-88" />
       </motion.div>
 
       <motion.div className="text-primary/10 dark:text-primary/15 absolute z-0 scale-105 blur-sm">
-        <BlobProfile className="h-48 w-48 sm:h-60 sm:w-60 md:h-72 md:w-72 lg:h-84 lg:w-84 xl:h-96 xl:w-96" />
+        <HeroProfileBlob className="h-48 w-48 sm:h-60 sm:w-60 md:h-72 md:w-72 lg:h-84 lg:w-84 xl:h-96 xl:w-96" />
       </motion.div>
 
       <motion.div className="text-primary/5 dark:text-primary/10 absolute z-0 scale-110 opacity-80 blur-md">
-        <BlobProfile className="h-48 w-48 sm:h-60 sm:w-60 md:h-72 md:w-72 lg:h-84 lg:w-84 xl:h-96 xl:w-96" />
+        <HeroProfileBlob className="h-48 w-48 sm:h-60 sm:w-60 md:h-72 md:w-72 lg:h-84 lg:w-84 xl:h-96 xl:w-96" />
       </motion.div>
 
       <motion.div
@@ -39,3 +39,5 @@ export const HeroImage = ({ src, alt }: HeroImageProps) => {
     </div>
   )
 }
+
+export default HeroImage
