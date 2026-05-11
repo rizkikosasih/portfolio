@@ -14,10 +14,11 @@ const Navbar = () => {
   }, [])
 
   const navLinks = [
-    { name: 'About', href: '#hero' },
+    { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skillset' },
-    { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Education', href: '#education' },
     { name: 'Contact', href: '#contact' },
   ]
 
@@ -32,7 +33,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-6">
-        <div className="text-xl font-bold tracking-tighter">Portfolio</div>
+        <div className="text-xl font-bold tracking-tighter">Rizki</div>
 
         <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
