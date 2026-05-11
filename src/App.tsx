@@ -1,9 +1,10 @@
-import { Navbar } from '@/components/layout'
+import { Navbar, SectionWrapper } from '@/components/layout'
+
+import Hero from '@/components/features/Hero'
+import Projects from '@/components/features/Projects'
+
 import {
-  Hero,
-  SectionWrapper,
   Skillset,
-  Projects,
   Education,
   Experience,
   Contact,
@@ -21,12 +22,12 @@ const App = () => {
           <Hero />
         </SectionWrapper>
 
-        <SectionWrapper id="skillset">
-          <Skillset />
-        </SectionWrapper>
-
         <SectionWrapper id="projects">
           <Projects />
+        </SectionWrapper>
+
+        <SectionWrapper id="skillset">
+          <Skillset />
         </SectionWrapper>
 
         <SectionWrapper id="experience">
