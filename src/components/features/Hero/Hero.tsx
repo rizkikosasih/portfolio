@@ -19,10 +19,7 @@ const Hero = () => {
   if (!data) return null
 
   return (
-    <section
-      id="about"
-      className="relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden px-4 pt-12 pb-20 sm:px-8 lg:pt-10"
-    >
+    <div className="relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden px-4 sm:px-8">
       <div className="bg-primary/10 absolute top-1/4 left-1/4 -z-10 h-72 w-72 rounded-full blur-[100px]" />
       <div className="absolute right-1/4 bottom-1/4 -z-10 h-96 w-96 rounded-full bg-blue-600/20 blur-[120px]" />
 
@@ -54,7 +51,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 
