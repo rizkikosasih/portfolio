@@ -3,6 +3,7 @@ import { useSanity } from '@/hooks/useSanity'
 import { projectQuery } from '@/lib/sanity'
 import type { ProjectData } from './project.types'
 import ProjectCard from './ProjectCard'
+import { SectionHeader } from '@/components/layout'
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -43,15 +44,11 @@ const Projects = () => {
   }
 
   return (
-    <section id="projects" className="py-20">
-      <div className="mb-12 space-y-2">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-          Featured Projects
-        </h2>
-        <p className="text-muted-foreground">
-          Seleksi karya terbaik dalam pengembangan web dan sistem.
-        </p>
-      </div>
+    <>
+      <SectionHeader
+        title="Featured Projects"
+        subtitle="Seleksi karya terbaik dalam pengembangan web dan sistem."
+      />
 
       <motion.div
         variants={containerVariants}
@@ -68,7 +65,7 @@ const Projects = () => {
           />
         ))}
       </motion.div>
-    </section>
+    </>
   )
 }
 

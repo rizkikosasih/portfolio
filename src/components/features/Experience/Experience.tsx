@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { useSanity } from '@/hooks'
 import { experienceQuery } from '@/lib/sanity'
 import type { ExperienceData } from './experience.types'
+import { SectionHeader } from '@/components/layout'
 
 const Experience = () => {
   const { data, loading } = useSanity<ExperienceData[]>(experienceQuery)
@@ -17,15 +18,11 @@ const Experience = () => {
   }
 
   return (
-    <div className="py-10">
-      <div className="mb-12 flex flex-col gap-2">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-          Work Experience
-        </h2>
-        <p className="text-muted-foreground">
-          Perjalanan profesional saya sebagai developer.
-        </p>
-      </div>
+    <>
+      <SectionHeader
+        title="Work Experience"
+        subtitle="Perjalanan profesional saya sebagai developer"
+      />
 
       <div className="before:bg-border relative space-y-8 before:absolute before:top-2 before:left-4 before:h-[95%] before:w-0.5 md:before:left-1/2">
         {data?.map((exp, index) => (
@@ -54,7 +51,7 @@ const Experience = () => {
           </motion.div>
         ))}
       </div>
-    </div>
+    </>
   )
 }
 

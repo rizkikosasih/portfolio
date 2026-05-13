@@ -17,7 +17,7 @@ const Contact = () => {
     },
     {
       label: 'LinkedIn',
-      value: 'Professional Profile',
+      value: 'Career Profile',
       href: contact.linkedin,
       icon: '🔗',
     },
@@ -36,7 +36,7 @@ const Contact = () => {
   ]
 
   return (
-    <div className="py-20" id="contact">
+    <>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -69,7 +69,7 @@ const Contact = () => {
           ))}
         </div>
       </motion.div>
-    </div>
+    </>
   )
 }
 

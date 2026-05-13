@@ -2,6 +2,7 @@ import { motion, type Variants } from 'framer-motion'
 import { useSanity } from '@/hooks/useSanity'
 import { educationQuery } from '@/lib/sanity'
 import type { EducationData } from './education.types'
+import { SectionHeader } from '@/components/layout'
 
 const Education = () => {
   const { data: education, loading } =
@@ -37,15 +38,11 @@ const Education = () => {
   }
 
   return (
-    <div className="py-20" id="education">
-      <div className="mb-12 space-y-2">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-          Education
-        </h2>
-        <p className="text-muted-foreground">
-          Latar belakang akademik dan kualifikasi formal.
-        </p>
-      </div>
+    <>
+      <SectionHeader
+        title="Education"
+        subtitle="Latar belakang akademik dan kualifikasi formal."
+      />
 
       <motion.div
         variants={containerVariants}
@@ -86,7 +83,7 @@ const Education = () => {
           </motion.div>
         ))}
       </motion.div>
-    </div>
+    </>
   )
 }
 
