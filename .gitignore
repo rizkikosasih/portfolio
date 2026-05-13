@@ -39,3 +39,6 @@ dist-ssr
 
 # Vercel (Persiapan Langkah 1 & 4)
 .vercel
+
+# Custome Ignore
+src/mocks/*
