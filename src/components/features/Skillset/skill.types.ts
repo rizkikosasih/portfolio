@@ -17,4 +17,5 @@ export interface SkillCardProps {
   type: SkillType
   Icon: FC<{ className?: string }>
   colorClass: string
+  isPriority?: boolean
 }

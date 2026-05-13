@@ -1,10 +1,24 @@
+import { cn } from '@/utils'
 import type { SkillCardProps } from './skill.types'
 
-const SkillCard = ({ title, type, Icon, colorClass }: SkillCardProps) => {
+const SkillCard = ({
+  title,
+  type,
+  Icon,
+  colorClass,
+  isPriority,
+}: SkillCardProps) => {
   return (
     <div
-      className={`group bg-card hover:border-primary/40 flex h-full flex-col items-center justify-center rounded-3xl border p-6 text-center transition-all hover:-translate-y-1`}
+      className={cn(
+        'group bg-card hover:border-primary/40 relative flex h-full flex-col items-center justify-center rounded-3xl border p-6 text-center transition-all duration-300 hover:-translate-y-1',
+        isPriority && 'ring-primary/40 shadow-primary/20 shadow-lg ring-1',
+      )}
     >
+      {isPriority && (
+        <div className="bg-primary/10 pointer-events-none absolute -inset-1 -z-10 rounded-3xl blur-xl" />
+      )}
+
       <div className="bg-primary/5 group-hover:bg-primary/10 mb-4 rounded-2xl p-4 transition-all">
         <Icon
           className={`h-8 w-8 transition-transform group-hover:scale-110 ${colorClass}`}
