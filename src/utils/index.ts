@@ -1,2 +1,2 @@
-export * from './skill-helpers'
+export * from './skill.helpers'
 export * from './cn'
