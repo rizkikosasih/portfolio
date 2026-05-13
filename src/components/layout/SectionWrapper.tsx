@@ -4,20 +4,22 @@ import { type ReactNode } from 'react'
 interface SectionWrapperProps {
   children: ReactNode
   id: string
+  className?: string
 }
 
-const SectionWrapper = ({ children, id }: SectionWrapperProps) => {
+const SectionWrapper = ({ id, children, className }: SectionWrapperProps) => {
   return (
-    <motion.section
-      id={id}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="relative mx-auto max-w-7xl px-6 py-12 md:px-12 md:py-20"
-    >
-      {children}
-    </motion.section>
+    <section id={id} className={`relative py-24 ${className || ''}`}>
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className="mx-auto max-w-7xl px-6"
+      >
+        {children}
+      </motion.div>
+    </section>
   )
 }
 
