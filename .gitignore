@@ -42,3 +42,4 @@ dist-ssr
 
 # Custome Ignore
 src/mocks/*
+scripts/sanity.mocks.ts
