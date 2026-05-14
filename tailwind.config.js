@@ -47,5 +47,5 @@ export default {
       },
     },
   },
-  plugins: [import('tailwindcss-animate')],
+  plugins: [tailwindAnimate],
 }
