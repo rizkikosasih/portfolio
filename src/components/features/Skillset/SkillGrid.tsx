@@ -2,33 +2,33 @@ import { motion } from 'framer-motion'
 import SkillCard from './SkillCard'
 import type { SkillGridProps } from './skill.types'
 import { getIconComponent } from '@/utils'
-import {
-  getSkillSpan,
-  getSkillColor,
-  arrangeSkills,
-  buildMobileRows,
-  isPrioritySkill,
-} from './skill.helpers'
+import { getSkillSpan, getSkillColor, isPrioritySkill } from './skill.helpers'
 import { useState } from 'react'
 
 const SkillGrid = ({ skills }: SkillGridProps) => {
-  const sortedSkills = arrangeSkills(skills)
-  const mobileRows = buildMobileRows(sortedSkills)
+  const desktopSorted = [...skills].sort(
+    (a, b) => (a.order?.desktop ?? 0) - (b.order?.desktop ?? 0),
+  )
+  const mobileSorted = [...skills].sort(
+    (a, b) => (a.order?.mobile ?? 0) - (b.order?.mobile ?? 0),
+  )
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
   return (
     <>
       {/* DESKTOP */}
       <div className="hidden grid-cols-6 gap-6 md:grid">
-        {sortedSkills.map((skill, index) => {
-          const Icon = getIconComponent(skill.icon)
-          const colorClass = getSkillColor(skill.title)
-          const priority = isPrioritySkill(skill.title)
+        {desktopSorted.map((skill, index) => {
+          const Icon = getIconComponent(skill.icon ?? '')
+          const colorClass = getSkillColor(skill.title ?? '')
+          const priority = isPrioritySkill(skill.title ?? '')
+          const type = skill.type ?? 'Other'
+          const title = skill.title ?? ''
 
           return (
             <motion.div
               key={`${skill.title}-${index}`}
-              className={getSkillSpan(skill.type, skill.title)}
+              className={getSkillSpan(type, title)}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
@@ -45,8 +45,8 @@ const SkillGrid = ({ skills }: SkillGridProps) => {
               }}
             >
               <SkillCard
-                title={skill.title}
-                type={skill.type}
+                title={title}
+                type={type}
                 Icon={Icon}
                 colorClass={colorClass}
                 isPriority={priority}
@@ -57,42 +57,35 @@ const SkillGrid = ({ skills }: SkillGridProps) => {
       </div>
 
       {/* MOBILE */}
-      <div className="flex flex-col gap-3 md:hidden">
-        {mobileRows.map((row, rowIndex) => (
-          <div
-            key={rowIndex}
-            className={
-              row.length === 1 ? 'grid grid-cols-1' : 'grid grid-cols-2 gap-3'
-            }
-          >
-            {row.map((skill, index) => {
-              const Icon = getIconComponent(skill.icon)
-              const colorClass = getSkillColor(skill.title)
+      <div className="grid grid-cols-2 gap-3 md:hidden">
+        {mobileSorted.map((skill, index) => {
+          const Icon = getIconComponent(skill.icon ?? '')
+          const colorClass = getSkillColor(skill.title ?? '')
 
-              const delay = (rowIndex * 2 + index) * 0.06
+          const order = skill.order?.mobile ?? 0
+          const isBackend = order % 3 === 1
 
-              return (
-                <motion.div
-                  key={skill.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.4,
-                    delay,
-                  }}
-                  viewport={{ once: true }}
-                >
-                  <SkillCard
-                    title={skill.title}
-                    type={skill.type}
-                    Icon={Icon}
-                    colorClass={colorClass}
-                  />
-                </motion.div>
-              )
-            })}
-          </div>
-        ))}
+          return (
+            <motion.div
+              key={skill.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.4,
+                delay: index * 0.06,
+              }}
+              viewport={{ once: true }}
+              className={isBackend ? 'col-span-2' : 'col-span-1'}
+            >
+              <SkillCard
+                title={skill.title ?? ''}
+                type={isBackend ? 'Backend' : 'Other'}
+                Icon={Icon}
+                colorClass={colorClass}
+              />
+            </motion.div>
+          )
+        })}
       </div>
     </>
   )

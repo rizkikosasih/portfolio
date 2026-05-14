@@ -1,7 +1,7 @@
-import type { Skill, SkillType } from './skill.types'
+import type { SkillData, SkillType } from './skill.types'
 
 /* -----------------------------
- * 1. PRIORITY / DOMAIN LOGIC
+ * PRIORITY / DOMAIN LOGIC
  * ----------------------------- */
 
 export const isPrioritySkill = (title: string) => {
@@ -31,45 +31,12 @@ export const getSkillPriority = (type: SkillType, title?: string): number => {
 }
 
 /* -----------------------------
- * 2. DATA ARRANGEMENT
- * ----------------------------- */
-
-export const arrangeSkills = (skills: Skill[]): Skill[] => {
-  const sorted = [...skills].sort(
-    (a, b) =>
-      getSkillPriority(a.type, a.title) - getSkillPriority(b.type, b.title),
-  )
-
-  const codeigniterIndex = sorted.findIndex((s) =>
-    s.title.toLowerCase().includes('codeigniter'),
-  )
-
-  const nodeIndex = sorted.findIndex((s) =>
-    s.title.toLowerCase().includes('node'),
-  )
-
-  const codeigniter = codeigniterIndex !== -1 ? sorted[codeigniterIndex] : null
-  const node = nodeIndex !== -1 ? sorted[nodeIndex] : null
-
-  const base = sorted.filter(
-    (_, i) => i !== codeigniterIndex && i !== nodeIndex,
-  )
-
-  const result = [...base]
-
-  if (codeigniter) result.splice(5, 0, codeigniter)
-  if (node) result.splice(6, 0, node)
-
-  return result
-}
-
-/* -----------------------------
- * 3. LAYOUT LOGIC (GRID)
+ * LAYOUT LOGIC (GRID)
  * ----------------------------- */
 
 export const getSkillSpan = (type: SkillType, title?: string): string => {
-  if (title === 'Laravel') return 'col-span-2 row-span-4'
-  if (type === 'Backend') return 'col-span-2 row-span-2'
+  if (title === 'Laravel') return 'col-span-2 row-span-2'
+  if (type === 'Backend') return 'col-span-2 row-span-1'
   if (type === 'Frontend') return 'col-span-1 row-span-1'
   if (type === 'Database') return 'col-span-1 row-span-1'
 
@@ -77,33 +44,7 @@ export const getSkillSpan = (type: SkillType, title?: string): string => {
 }
 
 /* -----------------------------
- * 4. MOBILE COMPOSITION
- * ----------------------------- */
-
-export const buildMobileRows = (skills: Skill[]) => {
-  const backends = skills.filter((s) => s.type === 'Backend')
-  const others = skills.filter((s) => s.type !== 'Backend')
-
-  const rows: Skill[][] = []
-
-  let backendIndex = 0
-  let otherIndex = 0
-
-  while (backendIndex < backends.length) {
-    rows.push([backends[backendIndex]])
-    backendIndex++
-
-    if (otherIndex < others.length) {
-      rows.push(others.slice(otherIndex, otherIndex + 2))
-      otherIndex += 2
-    }
-  }
-
-  return rows
-}
-
-/* -----------------------------
- * 5. PRESENTATION (UI MAPPING)
+ * PRESENTATION (UI MAPPING)
  * ----------------------------- */
 
 export const getSkillColor = (title: string): string => {
