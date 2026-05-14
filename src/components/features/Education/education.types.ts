@@ -1,6 +1,3 @@
-export interface EducationData {
-  school: string
-  major?: string
-  period: string
-  description: string
-}
+import type { Education } from '@/types/sanity.types'
+
+export type EducationData = Education

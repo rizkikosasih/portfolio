@@ -1,21 +1,18 @@
-import type { FC } from 'react'
+import type { ComponentType } from 'react'
+import type { Skill } from '@/types/sanity.types'
 
 export type SkillType = 'Frontend' | 'Backend' | 'Database' | 'Other'
 
-export interface Skill {
-  title: string
-  type: SkillType
-  icon: string
+export type SkillData = Skill
+
+export type SkillGridProps = {
+  skills: SkillData[]
 }
 
-export interface SkillGridProps {
-  skills: Skill[]
-}
-
-export interface SkillCardProps {
+export type SkillCardProps = {
   title: string
   type: SkillType
-  Icon: FC<{ className?: string }>
+  Icon: ComponentType<{ className?: string }>
   colorClass: string
   isPriority?: boolean
 }

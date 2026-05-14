@@ -1,36 +1,31 @@
 import type { LucideIcon } from 'lucide-react'
 
-export interface ExperienceData {
-  _id: string
-  company: string
-  role: string
-  date: string
-  description: string
-  technologies?: string[]
-}
+import type { Experience } from '@/types/sanity.types'
 
-export interface ExperienceItemProps {
+export type ExperienceData = Experience;
+
+export type ExperienceItemProps = {
   data: ExperienceData
   isActive: boolean
   onToggle: () => void
 }
 
-export interface ExperienceHeaderProps {
+export type ExperienceHeaderProps = {
   data: ExperienceData
   isActive: boolean
   onToggle: () => void
 }
 
-export interface ExperienceBodyProps {
+export type ExperienceBodyProps = {
   data: ExperienceData
   isActive: boolean
 }
 
-export interface ExperienceTechStackProps {
+export type ExperienceTechStackProps = {
   technologies?: string[]
 }
 
-export interface TechMeta {
+export type TechMeta = {
   icon: LucideIcon
   color: string
 }

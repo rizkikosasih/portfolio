@@ -1,23 +1,18 @@
-import type { SanityImage, SanityFile } from '@/lib/sanity'
+import type { Hero } from '@/types/sanity.types'
 
-export interface HeroImageProps {
+export type HeroImageProps = {
   src: string
   alt: string
 }
 
-export interface HeroContentProps {
+export type HeroContentProps = {
   name: string
   bio: string
   resumeUrl?: string | null
 }
 
-export interface HeroData {
-  name: string
-  mainImage: SanityImage
-  bio: string
-  resume: SanityFile
-}
+export type HeroData = Hero
 
-export interface HeroBlobProps {
+export type HeroBlobProps = {
   className: string
 }

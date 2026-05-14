@@ -1,10 +1,3 @@
-import type { SanityImage } from '@/lib/sanity'
+import type { Project } from '@/types/sanity.types'
 
-export interface ProjectData {
-  title: string
-  description: string
-  image: SanityImage
-  tags: string[]
-  github: string
-  demo: string
-}
+export type ProjectData = Project;

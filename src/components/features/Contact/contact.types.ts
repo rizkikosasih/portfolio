@@ -1,6 +1,3 @@
-export interface ContactData {
-  email: string
-  linkedin: string
-  github: string
-  whatsapp: string
-}
+import type { Contact } from '@/types/sanity.types'
+
+export type ContactData = Contact
