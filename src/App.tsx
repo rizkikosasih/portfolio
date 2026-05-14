@@ -1,11 +1,11 @@
 import { Navbar, SectionWrapper } from '@/components/layout'
 
-import Hero from '@/components/features/Hero'
-import Projects from '@/components/features/Projects'
-import Contact from '@/components/features/Contact'
-import Education from '@/components/features/Education'
-import Experience from '@/components/features/Experience'
-import Skillset from '@/components/features/Skillset'
+import Hero from '@/components/features/hero'
+import Projects from '@/components/features/projects'
+import Contact from '@/components/features/contact'
+import Education from '@/components/features/education'
+import Experience from '@/components/features/experience'
+import Skillset from '@/components/features/skillset'
 
 const App = () => {
   return (
