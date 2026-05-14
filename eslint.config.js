@@ -7,7 +7,16 @@ import prettierPlugin from 'eslint-plugin-prettier'
 import eslintConfigPrettier from 'eslint-config-prettier' // Tambahkan ini
 
 export default tseslint.config(
-  { ignores: ['dist', 'studio', 'node_modules'] },
+  {
+    ignores: [
+      'dist',
+      'studio',
+      'node_modules',
+      '**/src/types/**',
+      '**/*types*.ts',
+      '**/*types*.d.ts',
+    ],
+  },
   {
     extends: [
       js.configs.recommended,
