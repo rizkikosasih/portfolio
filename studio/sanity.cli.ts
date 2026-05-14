@@ -1,15 +1,19 @@
-import {defineCliConfig} from 'sanity/cli'
+// studio/sanity.cli.ts
+import { defineCliConfig } from 'sanity/cli'
+import * as dotenv from 'dotenv'
+import * as path from 'path'
+
+// Membaca file .env yang ada di root project (keluar 1 tingkat dari folder studio)
+dotenv.config({ path: path.resolve(__dirname, '../.env') })
 
 export default defineCliConfig({
   api: {
-    projectId: 'cu65sznd',
-    dataset: 'production',
+    projectId: process.env.VITE_SANITY_PROJECT_ID,
+    dataset: process.env.VITE_SANITY_DATASET || 'production',
   },
-  deployment: {
-    /**
-     * Enable auto-updates for studios.
-     * Learn more at https://www.sanity.io/docs/studio/latest-version-of-sanity#k47faf43faf56
-     */
-    autoUpdates: true,
+  typegen: {
+    path: '../src/**/*.{ts,tsx,js,jsx}',
+    schema: './schema.json',
+    generates: '../src/types/sanity.types.ts',
   },
 })
