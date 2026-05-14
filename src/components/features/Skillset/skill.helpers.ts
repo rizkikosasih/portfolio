@@ -1,4 +1,4 @@
-import type { SkillData, SkillType } from './skill.types'
+import type { SkillType } from './skill.types'
 
 /* -----------------------------
  * PRIORITY / DOMAIN LOGIC
