@@ -7,6 +7,7 @@ export default {
     {name: 'role', title: 'Role', type: 'string'},
     {name: 'date', title: 'Month - Year (e.g. 2024 - 2026)', type: 'string'},
     {name: 'description', title: 'Description', type: 'text'},
+    {name: 'order', title: 'Order Settings', type: 'number'},
     {
       name: 'technologies',
       title: 'Tech Stack',

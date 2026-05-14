@@ -9,5 +9,6 @@ export default {
     {name: 'tags', title: 'Tech Stack', type: 'array', of: [{type: 'string'}]},
     {name: 'github', title: 'GitHub Link', type: 'url'},
     {name: 'demo', title: 'Live Demo Link', type: 'url'},
+    {name: 'order', title: 'Order Settings', type: 'number'},
   ],
 }
