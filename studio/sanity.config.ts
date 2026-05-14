@@ -2,19 +2,21 @@ import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
 import { visionTool } from '@sanity/vision'
 import { schemaTypes } from './schemaTypes'
-import * as dotenv from 'dotenv'
-import * as path from 'path'
 
-dotenv.config({ path: path.resolve(__dirname, '../.env') })
+const projectId = import.meta.env.VITE_SANITY_PROJECT_ID
+const dataset = import.meta.env.VITE_SANITY_DATASET
 
-const projectId = process.env.VITE_SANITY_PROJECT_ID
-const dataset = process.env.VITE_SANITY_DATASET
+if (!projectId || !dataset) {
+  console.warn(
+    '⚠️ Warning: Variabel lingkungan VITE_SANITY_PROJECT_ID atau VITE_SANITY_DATASET belum terdefinisi di file .env root!',
+  )
+}
 
 export default defineConfig({
   name: 'default',
   title: 'Portfolio Web',
 
-  projectId: projectId || '',
+  projectId: projectId || 'cu65sznd',
   dataset: dataset || 'production',
 
   plugins: [structureTool(), visionTool()],

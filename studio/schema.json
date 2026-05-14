@@ -595,7 +595,7 @@
     }
   },
   {
-    "name": "about",
+    "name": "hero",
     "type": "document",
     "attributes": {
       "_id": {
@@ -608,7 +608,7 @@
         "type": "objectAttribute",
         "value": {
           "type": "string",
-          "value": "about"
+          "value": "hero"
         }
       },
       "_createdAt": {
