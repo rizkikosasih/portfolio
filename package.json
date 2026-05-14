@@ -8,7 +8,10 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "format": "prettier . --write"
+    "format": "prettier . --write",
+    "typegen:extract": "cd studio && npx sanity schema extract",
+    "typegen:generate": "cd studio && npx sanity typegen generate",
+    "typegen": "npm run typegen:extract && npm run typegen:generate"
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.2.8",
