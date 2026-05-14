@@ -1,12 +1,12 @@
-export const heroQuery = `*[_type == "about"][0]`
+export const heroQuery = `*[_type == "hero"][0]`
 
 export const skillsQuery = `*[_type == "skill"] | order(title asc)`
 
-export const experienceQuery = `*[_type == "experience"] | order(_createdAt desc)`
+export const experienceQuery = `*[_type == "experience"] | order(order asc)`
 
-export const educationQuery = `*[_type == "education"] | order(_createdAt desc)`
+export const educationQuery = `*[_type == "education"] | order(order asc)`
 
-export const projectQuery = `*[_type == "project"] | order(_createdAt desc) {
+export const projectQuery = `*[_type == "project"] | order(order asc) {
   ...,
   "category": category->title,
   "tools": tools[]->{
