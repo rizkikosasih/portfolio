@@ -4,17 +4,17 @@ import { educationQuery } from '@/lib/sanity'
 import type { EducationData } from './education.types'
 import { SectionHeader } from '@/components/layout'
 
+import EducationCard from './EducationCard'
+import EducationSkeleton from './EducationSkeleton'
+
 const Education = () => {
-  const { data: education, loading } =
-    useSanity<EducationData[]>(educationQuery)
+  const { data: education, loading } = useSanity<EducationData[]>(educationQuery)
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
+      transition: { staggerChildren: 0.2 },
     },
   }
 
@@ -27,15 +27,7 @@ const Education = () => {
     },
   }
 
-  if (loading) {
-    return (
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        {[1, 2].map((i) => (
-          <div key={i} className="bg-muted h-40 animate-pulse rounded-3xl" />
-        ))}
-      </div>
-    )
-  }
+  if (loading) return <EducationSkeleton />
 
   return (
     <>
@@ -48,39 +40,16 @@ const Education = () => {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={{ once: true }} // Performance guard
         className="grid grid-cols-1 gap-6 md:grid-cols-2"
       >
+        {/* Optional Chaining pada array utama */}
         {education?.map((edu, index) => (
-          <motion.div
-            key={index}
+          <EducationCard
+            key={edu._id ?? index}
+            edu={edu}
             variants={itemVariants}
-            className="group bg-card hover:border-primary/50 hover:shadow-primary/5 relative flex flex-col justify-between rounded-3xl border p-8 transition-all hover:shadow-2xl"
-          >
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-primary text-xs font-bold tracking-widest uppercase">
-                  {edu.period}
-                </span>
-              </div>
-              <div>
-                <h3 className="text-2xl leading-tight font-bold">
-                  {edu.school}
-                </h3>
-                {edu.major && (
-                  <p className="text-muted-foreground text-lg font-medium">
-                    {edu.major}
-                  </p>
-                )}
-              </div>
-            </div>
-
-            {edu.description && (
-              <p className="text-muted-foreground mt-6 text-sm leading-relaxed">
-                {edu.description}
-              </p>
-            )}
-          </motion.div>
+          />
         ))}
       </motion.div>
     </>
