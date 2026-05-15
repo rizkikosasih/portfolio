@@ -18,7 +18,7 @@ export const ExperienceHeader = ({
       )}
       aria-expanded={isActive}
     >
-      <div className="w-full space-y-1 sm:max-w-[70%]">
+      <div className="w-full space-y-1 sm:max-w-[70%] md:max-w-[80%] lg:max-w-[85%] xl:max-w-[90%]">
         <h3 className="text-lg leading-tight font-bold">{data.role}</h3>
 
         <div className="flex flex-col space-y-1 sm:block">

@@ -14,7 +14,7 @@ export const ExperienceBody = ({ data, isActive }: ExperienceBodyProps) => {
           className="overflow-hidden"
         >
           <div className="px-5 pb-5">
-            <p className="text-muted-foreground max-w-prose text-sm leading-relaxed">
+            <p className="text-muted-foreground max-w-full text-sm leading-relaxed sm:max-w-[70%] md:max-w-[80%] lg:max-w-[85%] xl:max-w-[90%]">
               {data.description}
             </p>
 
