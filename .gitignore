@@ -42,3 +42,6 @@ dist-ssr
 
 # Custome Ignore
 src/mocks/*
+
+.vercel
+.env*.local
