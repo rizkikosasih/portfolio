@@ -16,8 +16,8 @@ export default defineConfig({
   name: 'default',
   title: 'Portfolio Web',
 
-  projectId: projectId || 'cu65sznd',
-  dataset: dataset || 'production',
+  projectId: projectId || '',
+  dataset: dataset || '',
 
   plugins: [structureTool(), visionTool()],
 

@@ -3,12 +3,23 @@ export default {
   title: 'Projects', // Nama yang muncul di Dashboard Sanity
   type: 'document',
   fields: [
-    {name: 'title', title: 'Project Title', type: 'string'},
-    {name: 'description', title: 'Description', type: 'text'},
-    {name: 'image', title: 'Screenshot', type: 'image', options: {hotspot: true}},
-    {name: 'tags', title: 'Tech Stack', type: 'array', of: [{type: 'string'}]},
-    {name: 'github', title: 'GitHub Link', type: 'url'},
-    {name: 'demo', title: 'Live Demo Link', type: 'url'},
-    {name: 'order', title: 'Order Settings', type: 'number'},
+    { name: 'title', title: 'Project Title', type: 'string' },
+    { name: 'primaryStack', title: 'Primary Stack', type: 'string' },
+    { name: 'description', title: 'Description', type: 'text' },
+    {
+      name: 'image',
+      title: 'Screenshot',
+      type: 'image',
+      options: { hotspot: true },
+    },
+    {
+      name: 'tags',
+      title: 'Tech Stack',
+      type: 'array',
+      of: [{ type: 'string' }],
+    },
+    { name: 'github', title: 'GitHub Link', type: 'url' },
+    { name: 'demo', title: 'Live Demo Link', type: 'url' },
+    { name: 'order', title: 'Order Settings', type: 'number' },
   ],
 }
