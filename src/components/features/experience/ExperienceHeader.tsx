@@ -11,28 +11,35 @@ export const ExperienceHeader = ({
     <button
       onClick={onToggle}
       className={cn(
-        'flex w-full cursor-pointer items-start justify-between p-5 text-left transition-all duration-200',
+        'flex w-full cursor-pointer flex-col justify-between p-5 text-left transition-all duration-200 sm:flex-row sm:items-start',
         isActive
           ? 'text-foreground opacity-100'
           : 'text-muted-foreground opacity-90',
       )}
       aria-expanded={isActive}
-      onKeyDown={(e) => e.key === 'Enter' && onToggle()}
     >
-      <div className="space-y-1">
-        <h3 className="text-lg font-bold">{data.role}</h3>
+      <div className="w-full space-y-1 sm:max-w-[70%]">
+        <h3 className="text-lg leading-tight font-bold">{data.role}</h3>
 
-        <p className="text-muted-foreground text-sm">{data.company}</p>
+        <div className="flex flex-col space-y-1 sm:block">
+          <p className="text-muted-foreground text-sm font-medium">
+            {data.company}
+          </p>
+
+          <span className="text-muted-foreground block text-xs sm:hidden">
+            {data.date}
+          </span>
+        </div>
 
         {!isActive && (
-          <p className="text-muted-foreground wrap-break-words text-xs leading-relaxed whitespace-normal">
+          <p className="text-muted-foreground wrap-break-words mt-2 text-xs leading-relaxed whitespace-normal">
             {getExperienceSummary(data.description ?? '')}{' '}
             <span className="text-primary/60 font-medium">Lihat Detail</span>
           </p>
         )}
       </div>
 
-      <span className="text-muted-foreground text-sm whitespace-nowrap">
+      <span className="text-muted-foreground hidden text-sm whitespace-nowrap sm:block">
         {data.date}
       </span>
     </button>
