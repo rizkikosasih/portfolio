@@ -1,73 +1,108 @@
-# React + TypeScript + Vite
+# 🚀 Portfolio v2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern personal portfolio built with React 19, Vite, and Sanity.io. Proyek ini merupakan showcase teknis dari transisi karier PHP Native menuju ekosistem Modern Full-stack/Backend, dengan fokus utama pada Type Safety, Data Integrity, dan Scalable Architecture.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Tech Stack
 
-## React Compiler
+- **Frontend:** React 19 + Vite (v6/v7 ready)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Routing:** React Router v7 (Data Router Pattern)
 
-## Expanding the ESLint configuration
+- **Styling:** Tailwind CSS + Shadcn UI
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Animation:** Framer Motion
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **CMS:** Sanity.io (Headless CMS)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Language:** TypeScript
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 📂 Folder Structure
+
+```text
+├── studio/              # Sanity.io CMS (Backend)
+│   ├── schemas/         # Data models (Project, Experience, etc)
+│   └── .env             # CMS environment variables
+├── src/                 # Frontend (React)
+│   ├── assets/          # Icons, images, fonts
+│   ├── components/      # UI Components (UI, Features, Custom)
+│   ├── hooks/           # Custom hooks (useSanity, etc)
+│   ├── layouts/         # Page layouts (HomeLayout)
+│   ├── lib/             # Configurations (Sanity client, utils)
+│   ├── styles/          # Global CSS & Tailwind styles
+│   └── main.tsx         # App Entry & Router Provider (V7)
+├── .env                 # Frontend environment variables
+├── eslint.config.js     # Frontend environment variables
+├── tailwind.config.js   # Frontend environment variables
+├── vite.config.ts       # Frontend environment variables
+└── tsconfig.json        # TypeScript configuration
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Key Features & Implementation
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 🎨 Visual Experience & Interactions
+
+- The Scrolling Story (Hybrid Edition): Narasi transisi karier dari PHP Native ke Laravel/React yang divisualisasikan melalui Interactive Typography dan Glassmorphic profil.
+
+- Project Showcase (Horizontal Gallery): Implementasi galeri karya menggunakan Horizontal Scroll Card untuk memaksimalkan ruang layar tanpa mengorbankan detail proyek.
+
+- Experience Timeline (Single Open Accordion): Visualisasi riwayat profesional menggunakan sistem Accordion yang hanya mengizinkan satu item terbuka (Single Open) guna menjaga fokus pengguna dan kebersihan tata letak.
+
+- Dynamic Theme Switching: Sistem deteksi otomatis tema sistem operasi dengan transisi halus menggunakan next-themes dan variabel CSS Shadcn.
+
+### 🛠️ Technical Excellence (The "Backend" Mindset)
+
+- Zero Any Policy & Type Safety: Integrasi penuh Sanity Typegen untuk memastikan seluruh data dari CMS memiliki skema TypeScript yang eksplisit.
+
+- Data Integrity & Graceful Degradation: Penerapan Optional Chaining (?.) dan Nullish Coalescing (??) di seluruh komponen untuk mencegah crash saat data CMS kosong, dilengkapi dengan Skeleton Screens.
+
+- Advanced Image Optimization: Semua aset visual diproses melalui @sanity/image-url untuk mendukung format .webp dan auto-resize secara on-the-fly.
+
+- Scalable Component Architecture: Pemisahan struktur folder antara ui/ (stateless/visual) dan features/ (logic-heavy) guna mendukung skalabilitas jangka panjang.
+
+- Performance First: Implementasi Tree-shaking pada library ikon dan penggunaan properti viewport={{ once: true }} pada Framer Motion untuk menjaga performa browser tetap ringan.
+
+---
+
+## ⚙️ Environment Setup
+
+Buat file `.env` di **Root** dan **Studio** folder:
+
+Cuplikan kode
+
+```
+# Frontend (Vite)
+VITE_SANITY_PROJECT_ID=your_id
+VITE_SANITY_DATASET=production
+
+# Sanity Studio
+SANITY_STUDIO_PROJECT_ID=your_id
+SANITY_STUDIO_DATASET=production
+```
+
+---
+
+## 🛠️ Development Workflow
+
+1. **Install Dependencies:**
+
+```bash
+npm install
+```
+
+2. **Run Frontend:**
+
+```bash
+npm run dev
+```
+
+3. **Run Sanity Studio:**
+
+```bash
+cd studio && npm run dev
 ```
