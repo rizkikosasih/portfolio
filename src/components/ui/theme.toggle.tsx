@@ -1,59 +1,62 @@
-import { useState, useEffect } from "react"
-import { useTheme } from "next-themes"
-import { motion } from "framer-motion"
-import { Sun, Moon } from "lucide-react"
+import { useSyncExternalStore, useMemo } from 'react'
+import { useTheme } from 'next-themes'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Sun, Moon } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
-import { Button } from "./button"
+const subscribe = () => () => {}
+const getSnapshot = () => true
+const getServerSnapshot = () => false
 
 export const ThemeToggle = () => {
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const { setTheme, resolvedTheme } = useTheme()
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setMounted(true)
-    }, 0)
+  const isMounted = useSyncExternalStore(
+    subscribe,
+    getSnapshot,
+    getServerSnapshot,
+  )
 
-    return () => clearTimeout(timer)
-  }, [])
+  // Memoize status tema agar lebih efisien
+  const isDark = useMemo(() => resolvedTheme === 'dark', [resolvedTheme])
 
-  if (!mounted) {
-    return <div className="bg-secondary/50 h-10 w-10 rounded-xl border" />
+  if (!isMounted) {
+    return (
+      <Button
+        variant="secondary"
+        size="icon"
+        disabled
+        className="h-8 w-8 rounded-xl opacity-50"
+      >
+        <div className="h-4 w-4" />
+      </Button>
+    )
   }
-
-  const isDark = theme === "dark"
 
   return (
     <Button
       variant="secondary"
       size="icon"
-      onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="relative h-8 w-8 hover:cursor-pointer overflow-hidden"
+      onClick={() => setTheme(isDark ? 'light' : 'dark')}
+      className="relative h-8 w-8 overflow-hidden rounded-xl border shadow-sm hover:cursor-pointer"
       aria-label="Toggle Theme"
     >
-      <motion.div
-        initial={false}
-        animate={{ y: isDark ? 0 : 30 }}
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="absolute"
-      >
-        <Moon
-          className="h-4 w-4 fill-yellow-300 text-yellow-300"
-          style={{ filter: "drop-shadow(0 0 5px rgba(253, 224, 71, 0.5))" }}
-        />
-      </motion.div>
-
-      <motion.div
-        initial={false}
-        animate={{ y: isDark ? -30 : 0 }}
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="absolute"
-      >
-        <Sun
-          className="h-4 w-4 fill-orange-400 text-orange-400"
-          style={{ filter: "drop-shadow(0 0 5px rgba(251, 146, 60, 0.5))" }}
-        />
-      </motion.div>
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.div
+          key={isDark ? 'dark' : 'light'}
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -20, opacity: 0 }}
+          transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+          className="flex items-center justify-center"
+        >
+          {isDark ? (
+            <Moon className="h-4 w-4 fill-yellow-300 text-yellow-300" />
+          ) : (
+            <Sun className="h-4 w-4 fill-orange-400 text-orange-400" />
+          )}
+        </motion.div>
+      </AnimatePresence>
     </Button>
   )
 }
