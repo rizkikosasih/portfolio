@@ -1,21 +1,19 @@
-import type { ProjectData } from './project.types'
+import type { ProjectTagProps } from './project.types'
+import { Badge } from '@/components/ui'
 
-interface Props {
-  tags: ProjectData['tags']
-}
-
-const ProjectTags = ({ tags }: Props) => {
+const ProjectTags = ({ tags }: ProjectTagProps) => {
   if (!tags?.length) return null
 
   return (
     <div className="mt-6 flex flex-wrap gap-2">
       {tags.map((tag) => (
-        <span
+        <Badge
           key={tag}
-          className="hover:bg-secondary rounded-full border px-3 py-1 text-[10px] font-medium transition-colors"
+          variant="secondary"
+          className="bg-muted/40 border-border/50 hover:bg-secondary flex items-center p-4 gap-1 border text-xs backdrop-blur-sm"
         >
           {tag}
-        </span>
+        </Badge>
       ))}
     </div>
   )

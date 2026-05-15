@@ -1,9 +1,12 @@
 import { motion, type Variants } from 'framer-motion'
 import { useSanity } from '@/hooks/useSanity'
 import { projectQuery } from '@/lib/sanity'
-import type { ProjectData } from './project.types'
-import ProjectCard from './ProjectCard'
 import { SectionHeader } from '@/components/layout'
+
+import type { ProjectData } from './project.types'
+
+import ProjectCard from './ProjectCard'
+import ProjectSkeleton from './ProjectSkeleton'
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -30,18 +33,7 @@ const cardVariants: Variants = {
 const Projects = () => {
   const { data, loading } = useSanity<ProjectData[]>(projectQuery)
 
-  if (loading) {
-    return (
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        {[1, 2].map((i) => (
-          <div
-            key={i}
-            className="bg-muted aspect-video animate-pulse rounded-3xl"
-          />
-        ))}
-      </div>
-    )
-  }
+  if (loading) return <ProjectSkeleton />
 
   return (
     <>

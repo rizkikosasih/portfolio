@@ -1,14 +1,9 @@
-import { motion, type Variants } from 'framer-motion'
-import type { ProjectData } from './project.types'
+import { motion } from 'framer-motion'
+import type { ProjectCardProps } from './project.types'
 import ProjectImage from './ProjectImage'
 import ProjectTags from './ProjectTags'
 
-interface Props {
-  project: ProjectData
-  variants: Variants
-}
-
-const ProjectCard = ({ project, variants }: Props) => {
+const ProjectCard = ({ project, variants }: ProjectCardProps) => {
   const { title, description, image, tags, github, demo } = project
 
   return (
