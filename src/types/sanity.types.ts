@@ -44,6 +44,7 @@ export type Project = {
   _updatedAt: string
   _rev: string
   title?: string
+  primaryStack?: string
   description?: string
   image?: {
     asset?: SanityImageAssetReference
