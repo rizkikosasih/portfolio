@@ -8,10 +8,10 @@ const ProjectImage = ({ image, title, github, demo }: ProjectImageProps) => {
   if (!image) return <ProjectImagePlaceholder />
 
   return (
-    <div className="bg-muted group relative isolate h-0 w-full cursor-pointer overflow-hidden pb-[35%]">
+    <div className="bg-muted group can-hover:pb-[50%] relative isolate h-0 w-full cursor-pointer overflow-hidden pb-[65%] sm:pb-[55%] md:pb-[50%]">
       <img
         src={urlFor(image).width(200).blur(80).url()}
-        alt=""
+        alt={title}
         className="absolute inset-0 h-full w-full object-cover opacity-40 blur-2xl brightness-50"
       />
 
@@ -19,11 +19,11 @@ const ProjectImage = ({ image, title, github, demo }: ProjectImageProps) => {
         <img
           src={urlFor(image).width(1000).url()}
           alt={title}
-          className="max-h-full max-w-full rounded-xl object-contain shadow-2xl transition-all duration-500 group-hover:scale-[1.03] group-hover:-rotate-1"
+          className="max-h-full max-w-full rounded object-contain shadow-2xl transition-all duration-500 group-hover:scale-[1.03] group-hover:-rotate-1"
         />
       </div>
 
-      <div className="absolute inset-0 z-20 flex items-center justify-center gap-4 bg-black/40 opacity-0 backdrop-blur-[2px] transition-all duration-300 group-hover:opacity-100">
+      <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center gap-4 bg-black/40 opacity-0 backdrop-blur-[2px] transition-all duration-300 group-hover:pointer-events-auto group-hover:opacity-100">
         <ProjectActions github={github} demo={demo} />
       </div>
     </div>

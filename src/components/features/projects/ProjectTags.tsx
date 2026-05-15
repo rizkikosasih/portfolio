@@ -10,7 +10,7 @@ const ProjectTags = ({ tags }: ProjectTagProps) => {
         <Badge
           key={tag}
           variant="secondary"
-          className="bg-muted/40 border-border/50 hover:bg-secondary flex items-center p-4 gap-1 border text-xs backdrop-blur-sm"
+          className="bg-muted/40 border-border/50 hover:bg-secondary flex items-center gap-1 border text-xs backdrop-blur-sm"
         >
           {tag}
         </Badge>

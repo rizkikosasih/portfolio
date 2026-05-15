@@ -73,12 +73,12 @@ const Projects = () => {
         whileInView="visible"
         viewport={{ once: true }}
         onScroll={handleScroll}
-        className="scrollbar-hide relative flex w-full touch-pan-y snap-x snap-mandatory gap-6 overflow-x-auto overscroll-x-contain scroll-smooth py-10"
+        className="scrollbar-hide relative flex w-full touch-pan-x touch-pan-y snap-x snap-mandatory gap-6 overflow-x-auto overscroll-x-contain scroll-smooth py-10"
       >
         {data?.map((project) => (
           <div
             key={project.title}
-            className="w-[80vw] shrink-0 snap-center md:w-150"
+            className="w-[75vw] shrink-0 snap-center sm:w-[48vw] md:w-[40vw] lg:w-[31%] xl:w-[30%]"
           >
             <ProjectCard project={project} variants={cardVariants} />
           </div>
