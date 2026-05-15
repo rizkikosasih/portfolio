@@ -1,13 +1,13 @@
 type MockKey =
   | 'hero'
   | 'skills'
-  | 'project'
+  | 'projects'
   | 'experience'
   | 'education'
   | 'contact'
 
 export const getMockKey = (query: string): MockKey | null => {
-  if (query.includes('_type == "project"')) return 'project'
+  if (query.includes('_type == "project"')) return 'projects'
   if (query.includes('_type == "skill"')) return 'skills'
   if (query.includes('_type == "hero"')) return 'hero'
   if (query.includes('_type == "experience"')) return 'experience'
