@@ -26,7 +26,7 @@ export const ExperienceHeader = ({
 
         {!isActive && (
           <p className="text-muted-foreground wrap-break-words text-xs leading-relaxed whitespace-normal">
-            {getExperienceSummary(data.description)}{' '}
+            {getExperienceSummary(data.description ?? '')}{' '}
             <span className="text-primary/60 font-medium">Lihat Detail</span>
           </p>
         )}
