@@ -1,9 +1,9 @@
 import { motion, type Variants } from 'framer-motion'
 import { useSanity } from '@/hooks/useSanity'
 import { educationQuery } from '@/lib/sanity'
-import type { EducationData } from './education.types'
 import { SectionHeader } from '@/components/layout'
 
+import type { EducationData } from './education.types'
 import EducationCard from './EducationCard'
 import EducationSkeleton from './EducationSkeleton'
 

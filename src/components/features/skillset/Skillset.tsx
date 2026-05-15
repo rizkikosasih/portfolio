@@ -1,14 +1,16 @@
 import { useSanity } from '@/hooks/useSanity'
 import { skillsQuery } from '@/lib/sanity'
+import { SectionHeader } from '@/components/layout'
+import { Skeleton } from '@/components/ui'
+
 import type { SkillData } from './skill.types'
 import SkillGrid from './SkillGrid'
-import { SectionHeader } from '@/components/layout'
 
 const Skillset = () => {
   const { data: skills, loading } = useSanity<SkillData[]>(skillsQuery)
 
   if (loading)
-    return <div className="bg-muted h-40 animate-pulse rounded-3xl" />
+    return <Skeleton className="bg-muted h-40 animate-pulse rounded-3xl" />
 
   return (
     <div className="relative">

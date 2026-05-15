@@ -1,20 +1,15 @@
 import { useSanity } from '@/hooks/useSanity'
 import { heroQuery, getFileUrl, urlFor } from '@/lib/sanity'
-import { Skeleton } from '@/components/ui'
+
 import type { HeroData } from './hero.types'
 import HeroContent from './HeroContent'
 import HeroImage from './HeroImage'
+import HeroSkeleton from './HeroSkeleton'
 
 const Hero = () => {
   const { data, loading } = useSanity<HeroData>(heroQuery)
 
-  if (loading) {
-    return (
-      <div className="flex min-h-[80vh] items-center justify-center">
-        <Skeleton className="h-96 w-96 rounded-full" />
-      </div>
-    )
-  }
+  if (loading) return <HeroSkeleton />
 
   if (!data) return null
 

@@ -2,9 +2,11 @@ import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useSanity } from '@/hooks'
 import { experienceQuery } from '@/lib/sanity'
-import type { ExperienceData } from './experience.types'
 import { SectionHeader } from '@/components/layout'
+
+import type { ExperienceData } from './experience.types'
 import { ExperienceItem } from './ExperienceItem'
+import ExperienceSkeleton from './ExperienceSkeleton'
 
 const Experience = () => {
   const { data, loading } = useSanity<ExperienceData[]>(experienceQuery)
@@ -37,15 +39,7 @@ const Experience = () => {
     })
   }
 
-  if (loading) {
-    return (
-      <div className="space-y-6">
-        {[1, 2].map((i) => (
-          <div key={i} className="bg-muted h-32 animate-pulse rounded-3xl" />
-        ))}
-      </div>
-    )
-  }
+  if (loading) return <ExperienceSkeleton />
 
   return (
     <>
