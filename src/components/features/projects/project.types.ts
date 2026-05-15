@@ -1,7 +1,7 @@
 import type { Project } from '@/types/sanity.types'
-import type { Variants } from 'framer-motion';
+import type { Variants } from 'framer-motion'
 
-export type ProjectData = Project;
+export type ProjectData = Project
 
 export type ProjectCardProps = {
   project: ProjectData
@@ -17,4 +17,9 @@ export type ProjectImageProps = {
 
 export type ProjectTagProps = {
   tags: ProjectData['tags']
+}
+
+export type ProjectIndicatorProps = {
+  total: number
+  activeIndex: number
 }
