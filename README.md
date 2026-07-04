@@ -49,7 +49,9 @@ Modern personal portfolio built with React 19, Vite, and Sanity.io. Proyek ini m
 
 - The Scrolling Story (Hybrid Edition): Narasi transisi karier dari PHP Native ke Laravel/React yang divisualisasikan melalui Interactive Typography dan Glassmorphic profil.
 
-- Project Showcase (Horizontal Gallery): Implementasi galeri karya menggunakan Horizontal Scroll Card untuk memaksimalkan ruang layar tanpa mengorbankan detail proyek.
+- Project Showcase (Horizontal Gallery with Drag-to-Scroll): Galeri karya menggunakan Horizontal Scroll Card yang mendukung gerakan seret (*click-and-drag*) dengan kursor responsif (`cursor-grab` / `grabbing`), dilengkapi perlindungan *click-capture* untuk mencegah klik tautan saat menyeret, serta transisi *scroll-snapping* dinamis.
+
+- Responsive Navigation & Mobile Menu: Sistem navigasi desktop yang bersih dan menu burger mobile yang mulus menggunakan transisi tinggi/opasitas dari Framer Motion (`AnimatePresence`) untuk aksesibilitas di perangkat mobile.
 
 - Experience Timeline (Single Open Accordion): Visualisasi riwayat profesional menggunakan sistem Accordion yang hanya mengizinkan satu item terbuka (Single Open) guna menjaga fokus pengguna dan kebersihan tata letak.
 
@@ -62,6 +64,8 @@ Modern personal portfolio built with React 19, Vite, and Sanity.io. Proyek ini m
 - Data Integrity & Graceful Degradation: Penerapan Optional Chaining (?.) dan Nullish Coalescing (??) di seluruh komponen untuk mencegah crash saat data CMS kosong, dilengkapi dengan Skeleton Screens.
 
 - Advanced Image Optimization: Semua aset visual diproses melalui @sanity/image-url untuk mendukung format .webp dan auto-resize secara on-the-fly.
+
+- Modern TSConfig Standards: Konfigurasi TypeScript yang bersih dan modern dengan menghilangkan opsi usang seperti `baseUrl` dan parameter ignoreDeprecations untuk mengikuti standar kompilasi compiler TypeScript 6.x.
 
 - Scalable Component Architecture: Pemisahan struktur folder antara ui/ (stateless/visual) dan features/ (logic-heavy) guna mendukung skalabilitas jangka panjang.
 
