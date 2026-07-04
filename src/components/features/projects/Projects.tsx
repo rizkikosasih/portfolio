@@ -18,6 +18,13 @@ const Projects = () => {
 
   const totalItems = data?.length || 0
 
+  // Refs for drag-to-scroll functionality
+  const isDown = useRef(false)
+  const isDragging = useRef(false)
+  const startX = useRef(0)
+  const scrollLeftVal = useRef(0)
+  const dragStartPos = useRef({ x: 0, y: 0 })
+
   const handleScroll = useCallback(() => {
     const container = containerRef.current
     if (!container || totalItems === 0) return
@@ -38,6 +45,65 @@ const Projects = () => {
       setActiveIndex(index)
     }
   }, [totalItems])
+
+  // Mouse drag scroll event handlers
+  const handleMouseDown = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    const container = containerRef.current
+    if (!container) return
+    isDown.current = true
+    isDragging.current = false
+    dragStartPos.current = { x: e.clientX, y: e.clientY }
+    startX.current = e.pageX - container.offsetLeft
+    scrollLeftVal.current = container.scrollLeft
+
+    // Temporarily override smooth behavior & scroll snap for direct responsive drag
+    container.style.scrollSnapType = 'none'
+    container.style.scrollBehavior = 'auto'
+  }, [])
+
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    if (!isDown.current) return
+    const container = containerRef.current
+    if (!container) return
+
+    const x = e.pageX - container.offsetLeft
+    const walk = (x - startX.current) * 1.5 // Drag sensitivity multiplier
+
+    const moveX = Math.abs(e.clientX - dragStartPos.current.x)
+    const moveY = Math.abs(e.clientY - dragStartPos.current.y)
+
+    // Only start drag scroll if moved past a threshold of 5 pixels
+    if (moveX > 5 || moveY > 5) {
+      isDragging.current = true
+      container.scrollLeft = scrollLeftVal.current - walk
+    }
+  }, [])
+
+  const handleMouseUp = useCallback(() => {
+    isDown.current = false
+    const container = containerRef.current
+    if (container) {
+      container.style.scrollSnapType = ''
+      container.style.scrollBehavior = ''
+    }
+  }, [])
+
+  const handleMouseLeave = useCallback(() => {
+    isDown.current = false
+    const container = containerRef.current
+    if (container) {
+      container.style.scrollSnapType = ''
+      container.style.scrollBehavior = ''
+    }
+  }, [])
+
+  // Block clicks on anchors/buttons inside cards during drag
+  const handleClickCapture = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    if (isDragging.current) {
+      e.preventDefault()
+      e.stopPropagation()
+    }
+  }, [])
 
   useEffect(() => {
     const container = containerRef.current
@@ -73,7 +139,12 @@ const Projects = () => {
         whileInView="visible"
         viewport={{ once: true }}
         onScroll={handleScroll}
-        className="scrollbar-hide relative flex w-full touch-pan-x touch-pan-y snap-x snap-mandatory gap-6 overflow-x-auto overscroll-x-contain scroll-smooth py-10"
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseLeave}
+        onClickCapture={handleClickCapture}
+        className="scrollbar-hide relative flex w-full touch-pan-x touch-pan-y snap-x snap-mandatory gap-6 overflow-x-auto overscroll-x-contain scroll-smooth py-10 select-none cursor-grab active:cursor-grabbing"
       >
         {data?.map((project) => (
           <div

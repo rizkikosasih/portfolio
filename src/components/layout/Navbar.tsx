@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Menu, X } from 'lucide-react'
 import { ThemeToggle } from '@/components/ui'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,8 +52,41 @@ const Navbar = () => {
 
         <div className="flex items-center gap-4 md:hidden">
           <ThemeToggle />
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="text-foreground hover:text-primary hover:bg-accent/50 rounded-md p-2 transition-colors focus:outline-none"
+            aria-label="Toggle Menu"
+          >
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="bg-background/95 border-b border-border/40 md:hidden backdrop-blur-md"
+          >
+            <nav className="flex flex-col gap-2 px-6 py-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-muted-foreground hover:text-primary text-sm font-medium transition-colors py-2 border-b border-border/10 last:border-0"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   )
 }

@@ -14,7 +14,7 @@ const HomeLayout = () => {
       <main className="relative container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-primary/5 pointer-events-none absolute top-0 left-1/2 -z-10 h-125 w-full -translate-x-1/2 blur-3xl" />
 
-        <SectionWrapper id="hero">
+        <SectionWrapper id="about">
           <Hero />
         </SectionWrapper>
 
