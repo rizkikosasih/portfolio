@@ -46,6 +46,7 @@ const Projects = () => {
     }
   }, [totalItems])
 
+
   // Mouse drag scroll event handlers
   const handleMouseDown = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     const container = containerRef.current
@@ -53,7 +54,7 @@ const Projects = () => {
     isDown.current = true
     isDragging.current = false
     dragStartPos.current = { x: e.clientX, y: e.clientY }
-    startX.current = e.pageX - container.offsetLeft
+    startX.current = e.clientX
     scrollLeftVal.current = container.scrollLeft
 
     // Temporarily override smooth behavior & scroll snap for direct responsive drag
@@ -66,8 +67,7 @@ const Projects = () => {
     const container = containerRef.current
     if (!container) return
 
-    const x = e.pageX - container.offsetLeft
-    const walk = (x - startX.current) * 1.5 // Drag sensitivity multiplier
+    const walk = (e.clientX - startX.current) * 1.5 // Drag sensitivity multiplier based on clientX
 
     const moveX = Math.abs(e.clientX - dragStartPos.current.x)
     const moveY = Math.abs(e.clientY - dragStartPos.current.y)
@@ -119,8 +119,17 @@ const Projects = () => {
       }
     }
 
+    const preventDefaultDrag = (e: DragEvent) => {
+      e.preventDefault()
+    }
+
     container.addEventListener('wheel', preventNavigation, { passive: false })
-    return () => container.removeEventListener('wheel', preventNavigation)
+    container.addEventListener('dragstart', preventDefaultDrag)
+
+    return () => {
+      container.removeEventListener('wheel', preventNavigation)
+      container.removeEventListener('dragstart', preventDefaultDrag)
+    }
   }, [totalItems])
 
   if (loading) return <ProjectSkeleton />
