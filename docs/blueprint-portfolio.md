@@ -1,4 +1,4 @@
-# Blueprint Portfolio V2
+# Blueprint Portfolio
 
 Cetak biru ini dirancang untuk menunjukkan keahlian teknis Anda dalam transisi dari **PHP Native ke Laravel** dengan estetika visual yang adaptif dan struktur kode yang bersih.
 

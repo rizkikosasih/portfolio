@@ -1,6 +1,6 @@
 # 💼 LinkedIn Project Showcase Guide
 
-Dokumen ini berisi panduan siap pakai untuk mengunggah proyek **Portfolio v2** ke profil LinkedIn Anda (baik sebagai entri di bagian **Projects** maupun sebagai postingan **Update Status/Feed**).
+Dokumen ini berisi panduan siap pakai untuk mengunggah proyek **Portfolio** ke profil LinkedIn Anda (baik sebagai entri di bagian **Projects** maupun sebagai postingan **Update Status/Feed**).
 
 ---
 
@@ -9,9 +9,9 @@ Dokumen ini berisi panduan siap pakai untuk mengunggah proyek **Portfolio v2** k
 Gunakan informasi berikut saat menambahkan proyek baru di bagian **Projects** pada profil LinkedIn Anda:
 
 ### 1. Title / Nama Proyek
-* **Pilihan 1 (Fokus Transisi Teknologi - Direkomendasikan)**: 
-  `Personal Portfolio v2: Transitioning from PHP Native to React 19, TypeScript & Headless CMS`
-* **Pilihan 2 (Fokus Peran & Stack)**: 
+* **Pilihan 1 (Fokus Transisi Teknologi - Direkomendasikan)**:
+  `Personal Portfolio: Transitioning from PHP Native to React 19, TypeScript & Headless CMS`
+* **Pilihan 2 (Fokus Peran & Stack)**:
   `Modern Full-Stack Developer Portfolio (React 19, Vite, TypeScript & Sanity.io)`
 
 ### 2. Associated With
@@ -25,7 +25,7 @@ Gunakan informasi berikut saat menambahkan proyek baru di bagian **Projects** pa
 
 #### 🇮🇩 Versi Bahasa Indonesia:
 ```text
-Portfolio v2 adalah showcase teknis interaktif yang dirancang untuk menggambarkan transisi karir saya dari PHP Native menuju ekosistem Web Modern Full-Stack/Backend. Fokus utama proyek ini adalah Type Safety, Data Integrity, dan Scalable Architecture.
+Portfolio adalah showcase teknis interaktif yang dirancang untuk menggambarkan transisi karir saya dari PHP Native menuju ekosistem Web Modern Full-Stack/Backend. Fokus utama proyek ini adalah Type Safety, Data Integrity, dan Scalable Architecture.
 
 Fitur & Keunggulan Utama:
 - Interactive & Responsive UI: Dilengkapi galeri proyek horizontal yang mendukung drag-to-scroll (seret mouse) dengan kustomisasi snap alignment, serta menu navigasi HP yang responsif menggunakan Framer Motion.
@@ -38,7 +38,7 @@ Stack Teknologi: React 19, Vite, TypeScript, Tailwind CSS, Shadcn UI, Framer Mot
 
 #### 🇬🇧 Versi Bahasa Inggris (Rekomendasi untuk jangkauan HR global):
 ```text
-Portfolio v2 is a modern personal showcase designed to highlight my professional transition from PHP Native development to a modern Full-Stack/Backend ecosystem. The architecture is heavily engineered around Type Safety, Data Integrity, and Performance.
+Portfolio is a modern personal showcase designed to highlight my professional transition from PHP Native development to a modern Full-Stack/Backend ecosystem. The architecture is heavily engineered around Type Safety, Data Integrity, and Performance.
 
 Key Features & Implementations:
 - Fluid Draggable Gallery: Custom drag-to-scroll desktop behavior on the Projects gallery with snap-alignment and drag-start overrides to prevent accidental click triggers.
@@ -69,11 +69,11 @@ Untuk membagikan proyek ini ke feed LinkedIn Anda guna menarik perhatian rekrute
 
 ### Draf Postingan Feed LinkedIn:
 ```text
-🚀 Excited to share my newly updated personal portfolio (Portfolio v2)!
+🚀 Excited to share my newly updated personal portfolio (Portfolio)!
 
 Proyek ini bukan sekadar portofolio biasa, melainkan representasi perjalanan teknis saya dalam melakukan transisi dari PHP Native menuju ekosistem Web Modern Full-Stack & Backend.
 
-Dalam membangun v2 ini, saya berfokus penuh pada best practices software engineering:
+Dalam membangun portfolio ini, saya berfokus penuh pada best practices software engineering:
 🔹 Type Safety: Menerapkan Zero-Any Policy dengan integrasi penuh Sanity Typegen.
 🔹 Premium UX: Membuat galeri projek kustom yang mendukung drag-to-scroll (seret mouse) dengan transisi snap-alignment yang mulus, serta navigasi mobile yang responsif.
 🔹 Data Integrity & Caching: Proteksi nullish coalescing agar situs tidak crash saat data CMS kosong, didukung sistem offline-mock data untuk efisiensi local development.
